@@ -35,7 +35,24 @@ Al ser estática se puede publicar gratis en **GitHub Pages** (Settings → Page
 
 ## Configuración importante
 
-### 1. Conectar el formulario de acceso anticipado
+### 1. Correo automático de bienvenida (EmailJS)
+Cuando un psicólogo se registra, recibe al instante un correo de bienvenida con su código fundador (`emails/bienvenida.html`), y tú puedes recibir un aviso con sus datos (`emails/aviso-registro.html`).
+
+1. Crea una cuenta gratis en [emailjs.com](https://www.emailjs.com) (200 correos/mes).
+2. **Email Services → Add New Service → Gmail** y conecta tu correo. Copia el *Service ID*.
+3. **Email Templates → Create New Template** (bienvenida):
+   - *Subject*: `{{primer_nombre}}, tu plaza fundador en Mindflow está reservada ✅`
+   - *To Email*: `{{to_email}}` · *From Name*: `Mindflow` · *Reply To*: tu correo
+   - *Content*: botón de código `<>` y pega el contenido de `emails/bienvenida.html`. Copia el *Template ID*.
+4. (Opcional) Segunda plantilla de aviso para ti: *To Email* = tu correo, *Reply To* = `{{reply_to}}`, contenido de `emails/aviso-registro.html`.
+5. **Account → General**: copia tu *Public Key*.
+6. Pega los datos en `CONFIG.emailjs` al principio de `assets/js/main.js`.
+
+Variables disponibles en las plantillas: `nombre`, `primer_nombre`, `email`, `whatsapp`, `tipo`, `plan`, `codigo`, `fecha`.
+
+> El envío funciona en la web publicada (GitHub Pages, Netlify, tu dominio). En la vista previa de claude.ai las conexiones externas están bloqueadas.
+
+### 2. Otro destino para los registros (opcional)
 En `assets/js/main.js`, al principio del archivo:
 
 ```js
@@ -47,10 +64,10 @@ const CONFIG = {
 Se envía un `POST` JSON con: `nombre`, `email`, `whatsapp`, `tipo`, `plan`, `fecha`, `origen`.
 Mientras `formEndpoint` esté vacío, los registros se guardan solo en el navegador (`localStorage`, clave `mindflow_waitlist`) para pruebas.
 
-### 2. Precios
+### 3. Precios
 Los precios (USD 19 / 39 / 89 mensual; 15 / 31 / 71 anual) son **propuestas editables**. Cámbialos en `index.html` (atributos `data-m` y `data-y` de `.plan__price .amt`). Si cambias el plan Profesional, actualiza también el `39` en la función `calc()` de `main.js` (calculadora ROI).
 
-### 3. Datos del prototipo
+### 4. Datos del prototipo
 Las respuestas del chat de demo (precios, horarios, enfoques de la "Psic. Laura Méndez", ficticia) están en el objeto `ANSWERS` de `main.js`.
 
 ## Regenerar el vídeo

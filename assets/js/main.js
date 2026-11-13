@@ -4,11 +4,26 @@
 
 /**
  * CONFIGURACIÓN DEL FORMULARIO DE ACCESO ANTICIPADO
- * Pega aquí la URL de tu endpoint (Formspree, Make, Zapier, Google Apps Script, tu API…).
- * Ejemplo Formspree: "https://formspree.io/f/abcdwxyz"
- * Si se deja vacío, los registros se guardan en el navegador (localStorage) para pruebas.
+ *
+ * Opción A — EmailJS (recomendado): envía un correo de bienvenida automático al psicólogo
+ * que se registra y, opcionalmente, un aviso a ti con sus datos. Gratis hasta 200 correos/mes.
+ * Datos en https://dashboard.emailjs.com:
+ *   publicKey          -> Account > General > Public Key
+ *   serviceId          -> Email Services (p. ej. tu Gmail conectado)
+ *   welcomeTemplateId  -> plantilla de bienvenida (emails/bienvenida.html)
+ *   ownerTemplateId    -> (opcional) plantilla de aviso para ti (emails/aviso-registro.html)
+ *
+ * Opción B — formEndpoint: URL de Formspree, Make, Zapier, Google Apps Script o tu API.
+ *
+ * Si todo queda vacío, los registros solo se guardan en el navegador (modo prueba).
  */
 const CONFIG = {
+  emailjs: {
+    publicKey: "",
+    serviceId: "",
+    welcomeTemplateId: "",
+    ownerTemplateId: "",
+  },
   formEndpoint: "",
 };
 
@@ -813,7 +828,30 @@ const CONFIG = {
       fecha: new Date().toISOString(),
       origen: location.href,
     };
+    const code = "MF-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+    data.codigo = code;
+    const ejs = CONFIG.emailjs;
+    const useEmailjs = !!(ejs.publicKey && ejs.serviceId && ejs.welcomeTemplateId);
     try {
+      if (useEmailjs) {
+        const params = {
+          ...data,
+          primer_nombre: data.nombre.split(" ")[0],
+          whatsapp: data.whatsapp || "No indicado",
+          fecha: new Date().toLocaleString("es", { dateStyle: "long", timeStyle: "short" }),
+          to_email: data.email,
+          to_name: data.nombre,
+          reply_to: data.email,
+        };
+        const send = (templateId) =>
+          fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ service_id: ejs.serviceId, template_id: templateId, user_id: ejs.publicKey, template_params: params }),
+          }).then((r) => { if (!r.ok) throw new Error("EmailJS " + r.status); });
+        await send(ejs.welcomeTemplateId);
+        if (ejs.ownerTemplateId) send(ejs.ownerTemplateId).catch(() => {});
+      }
       if (CONFIG.formEndpoint) {
         const res = await fetch(CONFIG.formEndpoint, {
           method: "POST",
@@ -821,7 +859,8 @@ const CONFIG = {
           body: JSON.stringify(data),
         });
         if (!res.ok) throw new Error("HTTP " + res.status);
-      } else {
+      }
+      if (!useEmailjs && !CONFIG.formEndpoint) {
         await sleep(900);
         try {
           const list = JSON.parse(localStorage.getItem("mindflow_waitlist") || "[]");
@@ -829,7 +868,12 @@ const CONFIG = {
           localStorage.setItem("mindflow_waitlist", JSON.stringify(list));
         } catch (_) { /* storage unavailable */ }
       }
-      const code = "MF-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+      $("#successLead").textContent = useEmailjs
+        ? "Te acabamos de enviar un correo de bienvenida a "
+        : "Te escribiremos a ";
+      $("#successTail").textContent = useEmailjs
+        ? " con tu código fundador. Revisa también la carpeta de promociones o spam."
+        : " en menos de 24 h para agendar tu configuración 1:1 y activar tu cuenta.";
       $("#successName").textContent = data.nombre.split(" ")[0];
       $("#successEmail").textContent = data.email;
       $("#successCode").textContent = code;
