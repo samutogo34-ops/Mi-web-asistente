@@ -873,7 +873,7 @@ const CONFIG = {
         : "Te escribiremos a ";
       $("#successTail").textContent = useEmailjs
         ? " con tu código fundador. Revisa también la carpeta de promociones o spam."
-        : " en menos de 24 h para agendar tu configuración 1:1 y activar tu cuenta.";
+        : " en cuanto tu acceso a la beta esté listo.";
       $("#successName").textContent = data.nombre.split(" ")[0];
       $("#successEmail").textContent = data.email;
       $("#successCode").textContent = code;
