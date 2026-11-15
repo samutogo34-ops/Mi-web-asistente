@@ -42,11 +42,11 @@ const CONFIG = {
   /* ---------------- Toast ---------------- */
   const toastEl = $(".toast");
   let toastTimer;
-  function toast(msg) {
+  function toast(msg, ms = 3200) {
     toastEl.textContent = msg;
     toastEl.classList.add("is-show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toastEl.classList.remove("is-show"), 3200);
+    toastTimer = setTimeout(() => toastEl.classList.remove("is-show"), ms);
   }
 
   /* ---------------- Nav ---------------- */
@@ -820,7 +820,7 @@ const CONFIG = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ service_id: ejs.serviceId, template_id: templateId, user_id: ejs.publicKey, template_params: params }),
-          }).then((r) => { if (!r.ok) throw new Error("EmailJS " + r.status); });
+          }).then(async (r) => { if (!r.ok) throw new Error("EmailJS " + r.status + ": " + (await r.text()).slice(0, 140)); });
         await send(ejs.welcomeTemplateId);
         if (ejs.ownerTemplateId) send(ejs.ownerTemplateId).catch(() => {});
       }
@@ -854,7 +854,8 @@ const CONFIG = {
       signup.scrollIntoView({ behavior: "smooth", block: "center" });
       confetti(signup);
     } catch (err) {
-      toast("No pudimos enviar tu solicitud. Inténtalo de nuevo en un momento.");
+      console.error("[Mindflow] Error al enviar el formulario:", err);
+      toast("No pudimos enviar tu solicitud. Inténtalo de nuevo en un momento. (" + String(err.message || err).slice(0, 160) + ")", 15000);
     } finally {
       btn.classList.remove("is-loading");
       btn.disabled = false;
