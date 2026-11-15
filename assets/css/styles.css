@@ -483,6 +483,35 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .plan li { display: flex; gap: 10px; }
 .plan li::before { content: "✓"; color: var(--teal); font-weight: 800; }
 
+/* single offer */
+.offer { display: grid; grid-template-columns: 1.15fr .85fr; gap: 0; max-width: 980px; margin: 0 auto; border-radius: 28px; background: linear-gradient(#0f1130, #0f1130) padding-box, var(--grad-btn) border-box; border: 1.5px solid transparent; box-shadow: 0 30px 80px -30px rgba(139,92,246,.7); overflow: hidden; }
+.offer__main { padding: 40px; display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.offer__tag { align-self: flex-start; padding: 5px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--grad-btn); }
+.offer h3 { font-size: 30px; }
+.offer__desc { color: var(--muted); font-size: 15px; margin-top: -8px; }
+.offer__phases { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px; margin: 6px 0 8px; }
+.phase { display: flex; flex-direction: column; gap: 6px; padding: 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); min-width: 0; height: 100%; }
+.phase--now { background: rgba(45,212,191,.07); border-color: rgba(45,212,191,.35); }
+.phase__label { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.phase .plan__price { margin: 0; }
+.phase--now .amt { color: var(--teal); }
+.phase__note { font-size: 13px; color: var(--muted); }
+.phase__arrow { color: var(--dim); }
+.phase__arrow svg { width: 22px; height: 22px; }
+.offer__list { list-style: none; margin: 0; padding: 40px 36px; display: grid; gap: 14px; align-content: center; background: rgba(255,255,255,.025); border-left: 1px solid var(--border); font-size: 15px; }
+.offer__list li { display: flex; gap: 10px; }
+.offer__list li::before { content: "✓"; color: var(--teal); font-weight: 800; }
+@media (max-width: 860px) {
+  .offer { grid-template-columns: 1fr; }
+  .offer__list { border-left: 0; border-top: 1px solid var(--border); padding: 28px; }
+}
+@media (max-width: 600px) {
+  .offer__main { padding: 26px 20px; }
+  .offer__phases { grid-template-columns: 1fr; }
+  .phase__arrow { justify-self: center; transform: rotate(90deg); }
+  .offer__list { padding: 24px 20px; }
+}
+
 /* faq */
 .faq__inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: start; }
 .faq .section-head p { margin-top: 20px; }

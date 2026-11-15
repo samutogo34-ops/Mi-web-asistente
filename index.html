@@ -434,7 +434,7 @@
               <div><b id="roiSessions">0</b><span>sesiones salvadas al mes</span></div>
             </div>
             <div class="roi__bar"><span id="roiBar"></span></div>
-            <p class="roi__foot">Mindflow se paga <b id="roiTimes">0×</b> sola con el plan Profesional.</p>
+            <p class="roi__foot">Mindflow se paga <b id="roiTimes">0×</b> sola con sus $29 al mes.</p>
             <a href="#acceso" class="btn btn--primary btn--block magnetic">Quiero recuperar ese dinero</a>
             <small>Supuestos: los recordatorios con confirmación evitan ~50% de las ausencias y el asistente automatiza ~70% de la gestión.</small>
           </div>
@@ -503,56 +503,40 @@
           <span class="eyebrow">Precios</span>
           <h2>Menos que una sola sesión perdida.<br><span class="serif grad-text">Al mes.</span></h2>
           <p>Los miembros del acceso anticipado bloquean el <b>precio fundador de por vida</b>.</p>
-          <div class="billing-toggle" role="group" aria-label="Periodo de facturación">
-            <button class="is-active" data-billing="monthly">Mensual</button>
-            <button data-billing="yearly">Anual <em>−20%</em></button>
-            <span class="billing-toggle__pill" aria-hidden="true"></span>
+        </div>
+
+        <div class="offer reveal" data-delay="1">
+          <div class="offer__main">
+            <div class="offer__tag">Todo incluido · un solo precio</div>
+            <h3>Mindflow</h3>
+            <p class="offer__desc">El asistente completo para tu consulta. Sin planes ni límites: todo para todos.</p>
+            <div class="offer__phases">
+              <div class="phase phase--now">
+                <span class="phase__label">Primera versión</span>
+                <div class="plan__price"><span class="cur">$</span><span class="amt">0</span></div>
+                <span class="phase__note">Gratis para la lista de espera</span>
+              </div>
+              <div class="phase__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+              <div class="phase">
+                <span class="phase__label">Para seguir usándolo</span>
+                <div class="plan__price"><span class="cur">$</span><span class="amt">29</span><span class="per">/mes</span></div>
+                <span class="phase__note">Precio fundador bloqueado para siempre</span>
+              </div>
+            </div>
+            <a href="#acceso" class="btn btn--primary btn--lg btn--block magnetic">Reservar mi plaza fundador gratis</a>
           </div>
+          <ul class="offer__list">
+            <li>Agenda online 24/7 sincronizada con tu calendario</li>
+            <li>Asistente IA que responde cualquier pregunta</li>
+            <li>Recordatorios por WhatsApp y email con confirmación</li>
+            <li>Lista de espera automática si alguien cancela</li>
+            <li>Citas y conversaciones ilimitadas</li>
+            <li>Panel con métricas de tu consulta</li>
+            <li>Protocolo de seguridad ante situaciones de crisis</li>
+            <li>Soporte por chat y email</li>
+          </ul>
         </div>
-
-        <div class="plans">
-          <article class="plan reveal" data-delay="1">
-            <h3>Esencial</h3>
-            <p class="plan__desc">Para empezar a automatizar tu consulta.</p>
-            <div class="plan__price"><span class="cur">$</span><span class="amt" data-m="19" data-y="15">19</span><span class="per">/mes</span></div>
-            <ul>
-              <li>Agenda online 24/7</li>
-              <li>Respuestas automáticas (FAQ)</li>
-              <li>Recordatorios por email</li>
-              <li>Hasta 60 citas al mes</li>
-            </ul>
-            <a href="#acceso" class="btn btn--ghost btn--block" data-plan="Esencial">Empezar</a>
-          </article>
-
-          <article class="plan plan--featured reveal" data-delay="2">
-            <div class="plan__tag">Más elegido</div>
-            <h3>Profesional</h3>
-            <p class="plan__desc">El asistente completo para tu consulta.</p>
-            <div class="plan__price"><span class="cur">$</span><span class="amt" data-m="39" data-y="31">39</span><span class="per">/mes</span></div>
-            <ul>
-              <li>Todo lo de Esencial</li>
-              <li>Asistente IA que responde cualquier pregunta</li>
-              <li>Recordatorios por WhatsApp con confirmación</li>
-              <li>Lista de espera automática</li>
-              <li>Citas ilimitadas y panel de métricas</li>
-            </ul>
-            <a href="#acceso" class="btn btn--primary btn--block magnetic" data-plan="Profesional">Reservar plaza fundador</a>
-          </article>
-
-          <article class="plan reveal" data-delay="3">
-            <h3>Centro</h3>
-            <p class="plan__desc">Para equipos y centros con varios terapeutas.</p>
-            <div class="plan__price"><span class="cur">$</span><span class="amt" data-m="89" data-y="71">89</span><span class="per">/mes</span></div>
-            <ul>
-              <li>Todo lo de Profesional</li>
-              <li>Hasta 5 profesionales</li>
-              <li>Derivación por especialidad</li>
-              <li>Soporte prioritario por chat y email</li>
-            </ul>
-            <a href="#acceso" class="btn btn--ghost btn--block" data-plan="Centro">Apuntarme</a>
-          </article>
-        </div>
-        <p class="footnote reveal">Precios previstos para el lanzamiento, en USD. La primera versión será gratis para la lista de espera. Sin permanencia.</p>
+        <p class="footnote reveal">Precio previsto para el lanzamiento, en USD. Sin permanencia: si no te sirve, lo dejas cuando quieras.</p>
       </div>
     </section>
 
@@ -641,7 +625,6 @@
               <label for="fType">Tu consulta</label>
               <small class="field__err">Elige una opción</small>
             </div>
-            <input type="hidden" name="plan" id="fPlan" value="Profesional">
             <label class="consent">
               <input type="checkbox" id="fConsent" required>
               <span>Acepto recibir información sobre Mindflow. Nada de spam, prometido.</span>

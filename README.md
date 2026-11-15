@@ -48,7 +48,7 @@ Cuando un psicólogo se registra, recibe al instante un correo de bienvenida con
 5. **Account → General**: copia tu *Public Key*.
 6. Pega los datos en `CONFIG.emailjs` al principio de `assets/js/main.js`.
 
-Variables disponibles en las plantillas: `nombre`, `primer_nombre`, `email`, `whatsapp`, `tipo`, `plan`, `codigo`, `fecha`.
+Variables disponibles en las plantillas: `nombre`, `primer_nombre`, `email`, `whatsapp`, `tipo`, `codigo`, `fecha`.
 
 > El envío funciona en la web publicada (GitHub Pages, Netlify, tu dominio). En la vista previa de claude.ai las conexiones externas están bloqueadas.
 
@@ -61,11 +61,11 @@ const CONFIG = {
 };
 ```
 
-Se envía un `POST` JSON con: `nombre`, `email`, `whatsapp`, `tipo`, `plan`, `fecha`, `origen`.
+Se envía un `POST` JSON con: `nombre`, `email`, `whatsapp`, `tipo`, `codigo`, `fecha`, `origen`.
 Mientras `formEndpoint` esté vacío, los registros se guardan solo en el navegador (`localStorage`, clave `mindflow_waitlist`) para pruebas.
 
-### 3. Precios
-Los precios (USD 19 / 39 / 89 mensual; 15 / 31 / 71 anual) son **propuestas editables**. Cámbialos en `index.html` (atributos `data-m` y `data-y` de `.plan__price .amt`). Si cambias el plan Profesional, actualiza también el `39` en la función `calc()` de `main.js` (calculadora ROI).
+### 3. Precio
+Un solo plan, todo incluido: **gratis en la primera versión** y después **USD 29/mes** (precio fundador bloqueado). Para cambiarlo, edita el `29` de la sección `#precios` en `index.html` y el `29` de la función `calc()` en `main.js` (calculadora ROI).
 
 ### 4. Datos del prototipo
 Las respuestas del chat de demo (precios, horarios, enfoques de la "Psic. Laura Méndez", ficticia) están en el objeto `ANSWERS` de `main.js`.

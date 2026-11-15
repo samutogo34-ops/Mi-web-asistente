@@ -733,7 +733,7 @@ const CONFIG = {
     const hours = a * 4.33 * 0.7;
     $("#roiHours").textContent = Math.round(hours) + " h";
     $("#roiSessions").textContent = Math.round(savedSessions);
-    const times = moneyVal / 39;
+    const times = moneyVal / 29;
     $("#roiTimes").textContent = (times >= 10 ? Math.round(times) : times.toFixed(1).replace(".", ",")) + "×";
     $("#roiBar").style.width = Math.min(100, (moneyVal / 2000) * 100) + "%";
     animateMoney(moneyVal);
@@ -754,33 +754,6 @@ const CONFIG = {
   const roiObs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { roiObs.disconnect(); calc(); } }, { threshold: 0.3 });
   roiObs.observe($("#calculadora"));
   Object.values(r).forEach(fill);
-
-  /* ---------------- Billing toggle ---------------- */
-  const billBtns = $$(".billing-toggle button");
-  const billPill = $(".billing-toggle__pill");
-  function moveBill(btn) {
-    billPill.style.width = btn.offsetWidth + "px";
-    billPill.style.transform = `translateX(${btn.offsetLeft - 5}px)`;
-  }
-  billBtns.forEach((b) => b.addEventListener("click", () => {
-    billBtns.forEach((x) => x.classList.toggle("is-active", x === b));
-    moveBill(b);
-    const key = b.dataset.billing === "yearly" ? "y" : "m";
-    $$(".plan__price .amt").forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.remove("flip");
-        void el.offsetWidth;
-        el.classList.add("flip");
-        setTimeout(() => (el.textContent = el.dataset[key]), 220);
-      }, i * 80);
-    });
-    $$(".plan__price .per").forEach((el) => (el.textContent = key === "y" ? "/mes, anual" : "/mes"));
-  }));
-  requestAnimationFrame(() => moveBill(billBtns[0]));
-  document.fonts && document.fonts.ready.then(() => moveBill($(".billing-toggle button.is-active")));
-  window.addEventListener("resize", () => moveBill($(".billing-toggle button.is-active")));
-
-  $$("[data-plan]").forEach((a) => a.addEventListener("click", () => { $("#fPlan").value = a.dataset.plan; }));
 
   /* ---------------- Signup form ---------------- */
   const signup = $("#signupForm");
@@ -824,7 +797,6 @@ const CONFIG = {
       email: $("#fEmail").value.trim(),
       whatsapp: $("#fPhone").value.trim(),
       tipo: $("#fType").value,
-      plan: $("#fPlan").value,
       fecha: new Date().toISOString(),
       origen: location.href,
     };
