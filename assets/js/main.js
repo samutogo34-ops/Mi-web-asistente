@@ -19,9 +19,9 @@
  */
 const CONFIG = {
   emailjs: {
-    publicKey: "",
-    serviceId: "",
-    welcomeTemplateId: "",
+    publicKey: "9L7Ca0Av_NbUdFLgK",
+    serviceId: "service_vxbnihv",
+    welcomeTemplateId: "template_wo6okyp",
     ownerTemplateId: "",
   },
   formEndpoint: "",
