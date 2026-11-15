@@ -846,7 +846,7 @@ const CONFIG = {
       $("#successTail").textContent = useEmailjs
         ? " con tu código fundador. Revisa también la carpeta de promociones o spam."
         : " en cuanto tu acceso a la beta esté listo.";
-      $("#successName").textContent = data.nombre.split(" ")[0];
+      $("#successName").textContent = (data.nombre.split(" ")[0] || "").replace(/^./, (c) => c.toUpperCase());
       $("#successEmail").textContent = data.email;
       $("#successCode").textContent = code;
       $('[data-state="form"]', signup).hidden = true;
