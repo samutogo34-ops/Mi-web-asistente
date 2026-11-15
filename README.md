@@ -48,6 +48,8 @@ Cuando un psicólogo se registra, recibe al instante un correo de bienvenida con
 5. **Account → General**: copia tu *Public Key*.
 6. Pega los datos en `CONFIG.emailjs` al principio de `assets/js/main.js`.
 
+**Configuración actual:** servicio Gmail `service_vxbnihv` (hola.mindflow.bot@gmail.com) y plantilla `bienvenida`.
+
 Variables disponibles en las plantillas: `nombre`, `primer_nombre`, `email`, `whatsapp`, `tipo`, `codigo`, `fecha`.
 
 > El envío funciona en la web publicada (GitHub Pages, Netlify, tu dominio). En la vista previa de claude.ai las conexiones externas están bloqueadas.

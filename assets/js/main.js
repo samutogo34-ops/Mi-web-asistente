@@ -808,7 +808,7 @@ const CONFIG = {
       if (useEmailjs) {
         const params = {
           ...data,
-          primer_nombre: data.nombre.split(" ")[0],
+          primer_nombre: (data.nombre.split(" ")[0] || "").replace(/^./, (c) => c.toUpperCase()),
           whatsapp: data.whatsapp || "No indicado",
           fecha: new Date().toLocaleString("es", { dateStyle: "long", timeStyle: "short" }),
           to_email: data.email,
