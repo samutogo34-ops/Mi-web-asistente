@@ -37,7 +37,7 @@
       <nav class="nav__links" aria-label="Principal">
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#funciones">Funciones</a>
-        <a href="#video">Vídeo</a>
+        <a href="#video">Video</a>
         <a href="#prototipo">Pruébalo</a>
         <a href="#kit">Kit gratis</a>
         <a href="#precios">Precios</a>
@@ -52,7 +52,7 @@
     <div class="mobile-menu" aria-hidden="true">
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#funciones">Funciones</a>
-      <a href="#video">Vídeo</a>
+      <a href="#video">Video</a>
       <a href="#prototipo">Pruébalo gratis</a>
       <a href="#kit">Kit gratis de plantillas</a>
       <a href="#precios">Precios</a>
@@ -90,7 +90,7 @@
             </a>
             <a href="#video" class="btn btn--ghost btn--lg">
               <span class="play-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-              Ver vídeo · 40 s
+              Ver video · 40 s
             </a>
           </div>
           <ul class="hero__trust reveal" data-delay="4">
@@ -299,9 +299,9 @@
           <div class="video-wrap">
             <video id="promoVideo" preload="metadata" playsinline poster="assets/img/video-poster.jpg">
               <source src="assets/video/mindflow-demo.mp4" type="video/mp4">
-              Tu navegador no soporta vídeo HTML5.
+              Tu navegador no soporta video HTML5.
             </video>
-            <button class="video-play" aria-label="Reproducir vídeo">
+            <button class="video-play" aria-label="Reproducir video">
               <span class="video-play__ring"></span>
               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
@@ -419,8 +419,8 @@
             <input type="range" id="rSessions" min="5" max="60" value="20">
           </div>
           <div class="range">
-            <label for="rPrice">Precio por sesión <output id="oPrice">$40</output></label>
-            <input type="range" id="rPrice" min="15" max="200" step="5" value="40">
+            <label for="rPrice">Precio por sesión (COP) <output id="oPrice">$150.000</output></label>
+            <input type="range" id="rPrice" min="50000" max="400000" step="10000" value="150000">
           </div>
           <div class="range">
             <label for="rNoShow">Ausencias o cancelaciones tardías <output id="oNoShow">12%</output></label>
@@ -441,9 +441,9 @@
               <div><b id="roiSessions">0</b><span>sesiones salvadas al mes</span></div>
             </div>
             <div class="roi__bar"><span id="roiBar"></span></div>
-            <p class="roi__foot">Mindflow se paga <b id="roiTimes">0×</b> sola con sus $29 al mes.</p>
+            <p class="roi__foot">Mindflow se paga <b id="roiTimes">0×</b> sola con sus USD 29 al mes.</p>
             <a href="#acceso" class="btn btn--primary btn--block magnetic">Quiero recuperar ese dinero</a>
-            <small>Supuestos: los recordatorios con confirmación evitan ~50% de las ausencias y el asistente automatiza ~70% de la gestión.</small>
+            <small>Supuestos: los recordatorios con confirmación evitan ~50% de las ausencias y el asistente automatiza ~70% de la gestión. Conversión aproximada: 1 USD ≈ 4.000 COP.</small>
           </div>
         </div>
       </div>
@@ -494,7 +494,7 @@
                 <span class="btn__label">Quiero el kit gratis</span>
                 <span class="btn__spinner" aria-hidden="true"></span>
               </button>
-              <p class="kit-form__micro">🔒 Sin spam. Te enviaremos el kit y novedades de Mindflow; puedes darte de baja cuando quieras.</p>
+              <p class="kit-form__micro">🔒 Sin spam. Te enviaremos el kit y novedades de Mindflow; puedes darte de baja cuando quieras. Al pedirlo aceptas la <a href="privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a>.</p>
             </div>
             <div class="kit-form__state kit-form__success" data-state="success" hidden>
               <div class="kit-form__ok">✅ <span id="kitSuccessText">¡Listo! Tu kit está preparado.</span></div>
@@ -577,13 +577,13 @@
             <div class="offer__phases">
               <div class="phase phase--now">
                 <span class="phase__label">Primera versión</span>
-                <div class="plan__price"><span class="cur">$</span><span class="amt">0</span></div>
+                <div class="plan__price"><span class="amt">Gratis</span></div>
                 <span class="phase__note">Gratis para la lista de espera</span>
               </div>
               <div class="phase__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
               <div class="phase">
                 <span class="phase__label">Para seguir usándolo</span>
-                <div class="plan__price"><span class="cur">$</span><span class="amt">29</span><span class="per">/mes</span></div>
+                <div class="plan__price"><span class="cur">USD</span><span class="amt">29</span><span class="per">/mes</span></div>
                 <span class="phase__note">Precio fundador bloqueado para siempre</span>
               </div>
             </div>
@@ -600,7 +600,7 @@
             <li>Soporte por chat y email</li>
           </ul>
         </div>
-        <p class="footnote reveal">Precio previsto para el lanzamiento, en USD. Sin permanencia: si no te sirve, lo dejas cuando quieras.</p>
+        <p class="footnote reveal">Precio previsto para el lanzamiento: USD 29 al mes. Se cobra en dólares y tu banco lo convierte a pesos. Sin permanencia: si no te sirve, lo dejas cuando quieras.</p>
       </div>
     </section>
 
@@ -691,7 +691,7 @@
             </div>
             <label class="consent">
               <input type="checkbox" id="fConsent" required>
-              <span>Acepto recibir información sobre Mindflow. Nada de spam, prometido.</span>
+              <span>Acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a> y recibir información sobre Mindflow. Nada de spam, prometido.</span>
             </label>
             <button type="submit" class="btn btn--primary btn--block btn--lg magnetic">
               <span class="btn__label">Quiero mi acceso anticipado</span>
@@ -732,6 +732,8 @@
         <a href="#precios">Precios</a>
         <a href="#faq">FAQ</a>
         <a href="#acceso">Acceso anticipado</a>
+        <a href="privacidad.html">Política de datos</a>
+        <a href="reembolsos.html">Reembolsos</a>
       </nav>
     </div>
     <div class="container footer__bottom">
