@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Kit de 20 plantillas para psicólogos — Mindflow</title>
+<!--
+  Fuente del PDF "Kit de 20 plantillas de mensajes para psicólogos".
+  Se convierte en assets/kit/kit-plantillas-mindflow.pdf con:  node kit-src/render-kit.mjs
+  {{SITE_URL}} se reemplaza por la URL de la web al generar el PDF.
+-->
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #1d2140; --muted: #5b6180; --dim: #8a8fae; --line: #e6e8f2; --soft: #f6f7fb;
+    --violet: #6d4ae6; --indigo: #4f46e5; --teal: #0f9488; --teal-soft: #f0fdfa; --violet-soft: #f1edff;
+    --grad: linear-gradient(120deg, #8b5cf6 0%, #6366f1 50%, #14b8a6 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Inter", Arial, sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.5; }
+  .page { width: 210mm; height: 297mm; padding: 18mm 18mm 16mm; position: relative; overflow: hidden; page-break-after: always; display: flex; flex-direction: column; }
+  .page:last-child { page-break-after: auto; }
+  .mark { width: 34px; height: 34px; border-radius: 10px; background: var(--grad); display: grid; place-items: center; flex: none; }
+  .mark svg { width: 24px; height: 24px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 15pt; letter-spacing: -0.03em; }
+  .foot { position: absolute; left: 18mm; right: 18mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 8pt; color: var(--dim); border-top: 1px solid var(--line); padding-top: 3mm; }
+
+  /* cover */
+  .cover { background: #0b0d22; color: #fff; padding: 0; }
+  .cover__bg { position: absolute; inset: 0; background: radial-gradient(60% 45% at 85% 15%, rgba(139,92,246,.75), transparent 70%), radial-gradient(55% 45% at 10% 85%, rgba(20,184,166,.55), transparent 70%), radial-gradient(40% 35% at 30% 30%, rgba(79,70,229,.5), transparent 70%); }
+  .cover__in { position: relative; height: 100%; padding: 22mm 20mm; display: flex; flex-direction: column; }
+  .cover .brand { color: #fff; }
+  .cover__tag { display: inline-block; align-self: flex-start; margin-top: 46mm; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); font-size: 9pt; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  .cover h1 { font-size: 44pt; line-height: 1.02; letter-spacing: -0.045em; font-weight: 800; margin-top: 8mm; }
+  .cover h1 em { font-style: normal; background: linear-gradient(120deg, #c4b5fd, #5eead4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cover p { font-size: 13pt; color: #d9d6ff; margin-top: 7mm; max-width: 140mm; line-height: 1.5; }
+  .cover__list { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 8mm; font-size: 10.5pt; }
+  .cover__list div { display: flex; gap: 8px; align-items: center; }
+  .cover__list b { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 7px; background: rgba(255,255,255,.16); font-size: 9pt; }
+  .cover__foot { margin-top: 12mm; padding-top: 6mm; border-top: 1px solid rgba(255,255,255,.2); font-size: 9pt; color: #b9b6e8; display: flex; justify-content: space-between; }
+
+  /* intro */
+  h2 { font-size: 24pt; letter-spacing: -0.035em; line-height: 1.1; font-weight: 800; }
+  .eyebrow { font-size: 8.5pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--violet); margin-bottom: 3mm; }
+  .lead { color: var(--muted); font-size: 11.5pt; margin-top: 4mm; max-width: 150mm; }
+  .steps { display: grid; gap: 4mm; margin-top: 9mm; }
+  .step { display: flex; gap: 5mm; padding: 5mm; border-radius: 4mm; background: var(--soft); }
+  .step b { width: 26px; height: 26px; flex: none; border-radius: 8px; background: var(--violet-soft); color: var(--violet); display: grid; place-items: center; font-size: 10pt; }
+  .step strong { display: block; font-size: 11pt; margin-bottom: 1mm; }
+  .step span { color: var(--muted); }
+  .legend { margin-top: 8mm; padding: 5mm 6mm; border-radius: 4mm; border: 1.5px dashed #b8f0e6; background: var(--teal-soft); }
+  .legend h3 { font-size: 11pt; margin-bottom: 2mm; color: var(--teal); }
+  .legend ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm 6mm; color: var(--muted); font-size: 9.5pt; }
+  .legend code, .msg code { font-family: inherit; font-weight: 700; color: var(--indigo); background: #eef0ff; padding: 0 4px; border-radius: 4px; }
+  .toc { margin-top: 8mm; display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 8mm; }
+  .toc div { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 2mm 0; font-size: 10pt; }
+  .toc span { color: var(--dim); }
+
+  /* sections */
+  .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 6mm; margin-bottom: 6mm; padding-bottom: 4mm; border-bottom: 2px solid var(--line); }
+  .sec-head h2 { font-size: 20pt; }
+  .sec-head p { color: var(--muted); font-size: 10pt; margin-top: 1.5mm; }
+  .sec-num { font-size: 36pt; font-weight: 800; letter-spacing: -0.05em; line-height: .9; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tpls { display: grid; gap: 5mm; }
+  .tpl { border: 1px solid var(--line); border-radius: 4mm; padding: 4.5mm 5mm; break-inside: avoid; }
+  .tpl__top { display: flex; align-items: center; gap: 3mm; margin-bottom: 1.5mm; }
+  .tpl__n { flex: none; min-width: 26px; height: 22px; padding: 0 6px; border-radius: 6px; background: var(--violet-soft); color: var(--violet); font-weight: 800; font-size: 9pt; display: grid; place-items: center; }
+  .tpl h3 { font-size: 11.5pt; letter-spacing: -0.01em; }
+  .tpl__when { color: var(--dim); font-size: 9pt; margin-bottom: 2.5mm; }
+  .msg { background: var(--soft); border-radius: 3mm; padding: 3.5mm 4.5mm; font-size: 10pt; white-space: pre-line; border-left: 3px solid #c9bfff; }
+  .tip { margin-top: 2.5mm; font-size: 8.8pt; color: var(--teal); }
+  .tip::before { content: "💡 "; }
+
+  /* bonus */
+  .tips { display: grid; gap: 4mm; margin-top: 8mm; }
+  .tipcard { display: flex; gap: 5mm; padding: 5mm; border-radius: 4mm; background: var(--soft); }
+  .tipcard b { font-size: 20pt; font-weight: 800; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; min-width: 12mm; }
+  .tipcard strong { display: block; font-size: 11pt; margin-bottom: 1mm; }
+  .tipcard span { color: var(--muted); }
+
+  /* cta */
+  .cta { background: #0b0d22; color: #fff; }
+  .cta .cover__bg { opacity: .9; }
+  .cta__in { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 6mm; }
+  .cta h2 { font-size: 34pt; color: #fff; margin-top: 6mm; }
+  .cta h2 em { font-style: normal; background: linear-gradient(120deg, #c4b5fd, #5eead4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cta p { color: #d9d6ff; font-size: 12.5pt; margin-top: 6mm; max-width: 150mm; }
+  .cta ul { list-style: none; margin-top: 9mm; display: grid; gap: 3.5mm; font-size: 12pt; }
+  .cta li::before { content: "✓"; color: #5eead4; font-weight: 800; margin-right: 10px; }
+  .cta__price { margin-top: 10mm; display: flex; gap: 6mm; }
+  .cta__price div { padding: 5mm 6mm; border-radius: 4mm; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); }
+  .cta__price small { display: block; font-size: 8.5pt; letter-spacing: .1em; text-transform: uppercase; color: #b9b6e8; }
+  .cta__price b { font-size: 22pt; }
+  .cta__btn { display: inline-block; align-self: flex-start; margin-top: 11mm; padding: 5mm 9mm; border-radius: 999px; background: var(--grad); color: #fff; font-weight: 800; font-size: 13pt; text-decoration: none; }
+  .cta__url { margin-top: 4mm; color: #b9b6e8; font-size: 10pt; }
+  .cta__legal { position: absolute; left: 0; right: 0; bottom: 14mm; font-size: 8pt; color: #8f8cc0; }
+</style>
+</head>
+<body>
+
+<!-- ================= PORTADA ================= -->
+<section class="page cover">
+  <div class="cover__bg"></div>
+  <div class="cover__in">
+    <div class="brand"><span class="mark"><svg viewBox="0 0 64 64"><path d="M14 42c6-16 10-16 14 0s8 16 14 0 6-12 8-14" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></span>Mindflow</div>
+    <span class="cover__tag">Kit gratuito</span>
+    <h1>20 plantillas de mensajes<br><em>para psicólogos</em></h1>
+    <p>Mensajes listos para copiar y pegar en WhatsApp o email. Confirma citas, recuerda sesiones, gestiona cancelaciones y cobra con profesionalidad, sin escribir lo mismo una y otra vez.</p>
+    <div class="cover__list">
+      <div><b>1</b>Primer contacto</div>
+      <div><b>2</b>Agendar y confirmar</div>
+      <div><b>3</b>Recordatorios</div>
+      <div><b>4</b>Cambios y cancelaciones</div>
+      <div><b>5</b>Pagos y facturas</div>
+      <div><b>6</b>Seguimiento</div>
+    </div>
+    <div class="cover__foot"><span>Edición 2026</span><span>Incluye 5 consejos para reducir ausencias</span></div>
+  </div>
+</section>
+
+<!-- ================= CÓMO USARLO ================= -->
+<section class="page">
+  <div class="eyebrow">Antes de empezar</div>
+  <h2>Cómo sacarle partido a este kit</h2>
+  <p class="lead">Cada plantilla está pensada para una situación concreta del día a día de tu consulta. Adáptalas a tu tono: cuanto más suenen a ti, mejor funcionan.</p>
+  <div class="steps">
+    <div class="step"><b>1</b><div><strong>Elige la situación</strong><span>Busca en el índice el momento en el que estás: un paciente nuevo, una cita que confirmar, un pago pendiente…</span></div></div>
+    <div class="step"><b>2</b><div><strong>Copia y personaliza</strong><span>Sustituye lo que va entre corchetes por los datos reales. Revisa que el tono encaje con tu forma de trabajar.</span></div></div>
+    <div class="step"><b>3</b><div><strong>Guárdalas como respuestas rápidas</strong><span>En WhatsApp Business puedes guardarlas como "respuestas rápidas" y usarlas escribiendo "/" y una palabra clave.</span></div></div>
+  </div>
+  <div class="legend">
+    <h3>Qué significa cada corchete</h3>
+    <ul>
+      <li><code>[Nombre]</code> nombre del paciente</li>
+      <li><code>[Tu nombre]</code> tu nombre profesional</li>
+      <li><code>[día]</code> <code>[hora]</code> fecha y hora de la cita</li>
+      <li><code>[enlace]</code> enlace de videollamada o de pago</li>
+      <li><code>[importe]</code> precio de la sesión</li>
+      <li><code>[dirección]</code> dirección de tu consulta</li>
+    </ul>
+  </div>
+  <div class="toc">
+    <div>1 · Primer contacto <span>Plantillas 1–3</span></div>
+    <div>4 · Cambios y cancelaciones <span>Plantillas 11–14</span></div>
+    <div>2 · Agendar y confirmar <span>Plantillas 4–6</span></div>
+    <div>5 · Pagos y facturas <span>Plantillas 15–17</span></div>
+    <div>3 · Recordatorios <span>Plantillas 7–10</span></div>
+    <div>6 · Seguimiento <span>Plantillas 18–20</span></div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>2</span></div>
+</section>
+
+<!-- ================= 1 + 2 ================= -->
+<section class="page">
+  <div class="sec-head"><div><h2>Primer contacto</h2><p>La primera respuesta decide si el paciente agenda contigo o sigue buscando.</p></div><div class="sec-num">01</div></div>
+  <div class="tpls">
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">1</span><h3>Respuesta a un primer mensaje</h3></div>
+      <div class="tpl__when">Cuando alguien te escribe por primera vez pidiendo información.</div>
+      <div class="msg">Hola, [Nombre]. Gracias por escribirme, me alegra que hayas dado este paso.
+Soy [Tu nombre], psicólogo/a. Atiendo de forma [presencial / online] y la primera sesión sirve para conocernos y ver cómo puedo ayudarte.
+¿Te viene mejor por la mañana o por la tarde? Así te propongo un par de horarios.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">2</span><h3>Fuera de horario</h3></div>
+      <div class="tpl__when">Respuesta automática para mensajes que llegan de noche o en fin de semana.</div>
+      <div class="msg">Hola, gracias por tu mensaje. En este momento estoy fuera de mi horario de atención ([horario]).
+Te responderé personalmente en cuanto vuelva. Si es una urgencia, por favor contacta con los servicios de emergencia de tu país.</div>
+      <div class="tip">Incluir el aviso de urgencias es una buena práctica profesional.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">3</span><h3>Tarifas y modalidad</h3></div>
+      <div class="tpl__when">Cuando te preguntan cuánto cuesta y cómo funcionan las sesiones.</div>
+      <div class="msg">¡Claro! Te cuento:
+• Duración: [50] minutos
+• Precio: [importe] por sesión
+• Modalidad: [presencial en [dirección] / online por videollamada]
+• Pago: [transferencia / tarjeta / efectivo]
+Si quieres, te propongo horarios para la primera sesión.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>3</span></div>
+</section>
+
+<section class="page">
+  <div class="sec-head"><div><h2>Agendar y confirmar</h2><p>Mensajes claros que evitan malentendidos con la fecha, la hora y el lugar.</p></div><div class="sec-num">02</div></div>
+  <div class="tpls">
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">4</span><h3>Propuesta de horarios</h3></div>
+      <div class="tpl__when">Ofrece opciones concretas: es más fácil decir "sí" a una opción que inventar una.</div>
+      <div class="msg">Tengo disponibles estos horarios:
+• [día] a las [hora]
+• [día] a las [hora]
+• [día] a las [hora]
+¿Cuál te viene mejor? En cuanto me digas, te lo dejo reservado.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">5</span><h3>Confirmación de cita presencial</h3></div>
+      <div class="tpl__when">Justo después de que el paciente elija horario.</div>
+      <div class="msg">¡Perfecto, [Nombre]! Tu sesión queda reservada:
+📅 [día] a las [hora]
+📍 [dirección]
+Te enviaré un recordatorio el día anterior. Si necesitas cambiarla, avísame con al menos [24] horas de antelación.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">6</span><h3>Confirmación de cita online</h3></div>
+      <div class="tpl__when">Para sesiones por videollamada.</div>
+      <div class="msg">¡Listo, [Nombre]! Tu sesión online queda reservada:
+📅 [día] a las [hora]
+💻 Enlace: [enlace]
+Te recomiendo conectarte desde un lugar tranquilo y con buena conexión. Te recordaré la cita el día anterior.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>4</span></div>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="page">
+  <div class="sec-head"><div><h2>Recordatorios</h2><p>La forma más sencilla de reducir las ausencias sin aviso.</p></div><div class="sec-num">03</div></div>
+  <div class="tpls">
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">7</span><h3>Recordatorio 24 horas antes</h3></div>
+      <div class="tpl__when">El más importante: pide confirmación activa.</div>
+      <div class="msg">Hola, [Nombre] 👋 Te recuerdo tu sesión de mañana, [día], a las [hora].
+¿Me confirmas tu asistencia respondiendo "Sí"? Si necesitas cambiarla, dímelo y buscamos otro horario.</div>
+      <div class="tip">Pedir una respuesta ("Sí") compromete más que un simple aviso.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">8</span><h3>Recordatorio 2 horas antes</h3></div>
+      <div class="tpl__when">Un aviso corto el mismo día.</div>
+      <div class="msg">Hola, [Nombre]. Nos vemos hoy a las [hora]. ¡Hasta luego!</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">9</span><h3>Antes de la primera sesión</h3></div>
+      <div class="tpl__when">Reduce los nervios del paciente nuevo y las dudas de última hora.</div>
+      <div class="msg">Hola, [Nombre]. Mañana es nuestra primera sesión, a las [hora].
+No necesitas preparar nada: hablaremos de lo que te trae a consulta y resolveré tus dudas sobre el proceso. Si tienes alguna pregunta antes, escríbeme.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">10</span><h3>Recordatorio de sesión online</h3></div>
+      <div class="tpl__when">Unos minutos antes, con el enlace a mano.</div>
+      <div class="msg">Hola, [Nombre]. En [15] minutos empieza nuestra sesión. Aquí tienes el enlace: [enlace]
+Te espero.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>5</span></div>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="page">
+  <div class="sec-head"><div><h2>Cambios y cancelaciones</h2><p>Firmes con tu política, cercanos con la persona.</p></div><div class="sec-num">04</div></div>
+  <div class="tpls">
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">11</span><h3>El paciente quiere reprogramar</h3></div>
+      <div class="tpl__when">Cuando avisa con tiempo.</div>
+      <div class="msg">Gracias por avisarme con tiempo, [Nombre]. Sin problema.
+Te propongo [día] a las [hora] o [día] a las [hora]. ¿Cuál prefieres?</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">12</span><h3>Cancelación tardía</h3></div>
+      <div class="tpl__when">Cuando cancela con menos antelación de la que indica tu política.</div>
+      <div class="msg">Entiendo, [Nombre], gracias por avisarme. Como te comenté al reservar, las cancelaciones con menos de [24] horas de antelación [se cobran / cuentan como sesión realizada].
+Si quieres, te propongo ya un nuevo horario para no perder la continuidad.</div>
+      <div class="tip">Tener la política por escrito desde la primera cita evita conversaciones incómodas.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">13</span><h3>Ausencia sin aviso</h3></div>
+      <div class="tpl__when">Cuando el paciente no se presenta.</div>
+      <div class="msg">Hola, [Nombre]. Hoy te esperaba a las [hora] y no hemos podido vernos. Espero que todo esté bien.
+Cuando quieras, dime y buscamos un nuevo horario.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">14</span><h3>Necesitas cambiar tú la cita</h3></div>
+      <div class="tpl__when">Cuando el cambio viene de tu parte.</div>
+      <div class="msg">Hola, [Nombre]. Te escribo porque me ha surgido un imprevisto y no podré atenderte el [día] a las [hora]. Lo siento mucho.
+¿Te vendría bien [día] a las [hora] o [día] a las [hora]?</div>
+    </div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>6</span></div>
+</section>
+
+<!-- ================= 5 + 6 ================= -->
+<section class="page">
+  <div class="sec-head"><div><h2>Pagos y facturas</h2><p>Hablar de dinero sin incomodidad.</p></div><div class="sec-num">05</div></div>
+  <div class="tpls">
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">15</span><h3>Datos de pago</h3></div>
+      <div class="tpl__when">Al confirmar la cita o después de la sesión.</div>
+      <div class="msg">Te dejo los datos para el pago de la sesión ([importe]):
+[datos bancarios / enlace de pago: [enlace]]
+Cuando lo hagas, si puedes envíame el comprobante. ¡Gracias!</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">16</span><h3>Recordatorio amable de pago</h3></div>
+      <div class="tpl__when">Cuando un pago lleva unos días pendiente.</div>
+      <div class="msg">Hola, [Nombre]. Te escribo solo para recordarte que tienes pendiente el pago de la sesión del [día] ([importe]). Puede que se te haya pasado, ¡nos pasa a todos!
+Te dejo de nuevo los datos: [datos de pago].</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">17</span><h3>Envío de factura</h3></div>
+      <div class="tpl__when">Si el paciente necesita factura, por ejemplo para su seguro.</div>
+      <div class="msg">Hola, [Nombre]. Te adjunto la factura de la sesión del [día]. Si necesitas que incluya algún dato más, dímelo y te la envío de nuevo.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>7</span></div>
+</section>
+
+<section class="page">
+  <div class="sec-head"><div><h2>Seguimiento</h2><p>Pequeños gestos que cuidan la relación profesional.</p></div><div class="sec-num">06</div></div>
+  <div class="tpls">
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">18</span><h3>Después de la primera sesión</h3></div>
+      <div class="tpl__when">El mismo día o al día siguiente.</div>
+      <div class="msg">Hola, [Nombre]. Gracias por la sesión de hoy. Si te parece bien, te reservo el próximo encuentro el [día] a las [hora].
+Cualquier duda sobre horarios o pagos, puedes escribirme por aquí.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">19</span><h3>Paciente que no ha vuelto a agendar</h3></div>
+      <div class="tpl__when">Un mensaje único y respetuoso, sin insistir.</div>
+      <div class="msg">Hola, [Nombre]. Hace un tiempo que no coincidimos y quería decirte que, si en algún momento quieres retomar las sesiones, tengo horarios disponibles.
+Sin ningún compromiso: aquí estaré cuando lo necesites.</div>
+      <div class="tip">Envíalo una sola vez y respeta siempre la decisión del paciente.</div>
+    </div>
+    <div class="tpl">
+      <div class="tpl__top"><span class="tpl__n">20</span><h3>Al finalizar el proceso</h3></div>
+      <div class="tpl__when">Cuando se cierra la etapa de terapia.</div>
+      <div class="msg">[Nombre], ha sido un placer acompañarte en este proceso. Si en el futuro quieres volver a hablar, sabes dónde encontrarme.
+¡Te deseo lo mejor!</div>
+    </div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>8</span></div>
+</section>
+
+<!-- ================= BONUS ================= -->
+<section class="page">
+  <div class="eyebrow">Bonus</div>
+  <h2>5 consejos para reducir las ausencias</h2>
+  <p class="lead">Las plantillas funcionan mejor cuando forman parte de un sistema. Estos cinco hábitos marcan la diferencia.</p>
+  <div class="tips">
+    <div class="tipcard"><b>1</b><div><strong>Responde rápido</strong><span>Quien escribe buscando psicólogo suele contactar con varios. Responder en la primera hora aumenta mucho la probabilidad de que agende contigo.</span></div></div>
+    <div class="tipcard"><b>2</b><div><strong>Recordatorio doble: 24 h y 2 h</strong><span>El primero permite reorganizar si hay un cambio; el segundo evita olvidos de última hora.</span></div></div>
+    <div class="tipcard"><b>3</b><div><strong>Pide confirmación activa</strong><span>"¿Me confirmas respondiendo Sí?" compromete más que un aviso que no requiere respuesta.</span></div></div>
+    <div class="tipcard"><b>4</b><div><strong>Política de cancelación por escrito</strong><span>Compártela al reservar la primera cita. Así, si hay que aplicarla, ya era conocida y acordada.</span></div></div>
+    <div class="tipcard"><b>5</b><div><strong>Llena los huecos con una lista de espera</strong><span>Si alguien cancela, avisa a pacientes que querían un horario antes. Una cancelación no tiene por qué ser una hora perdida.</span></div></div>
+  </div>
+  <div class="foot"><span>Mindflow · Kit de 20 plantillas para psicólogos</span><span>9</span></div>
+</section>
+
+<!-- ================= CTA MINDFLOW ================= -->
+<section class="page cta">
+  <div class="cover__bg"></div>
+  <div class="cta__in">
+    <div class="brand"><span class="mark"><svg viewBox="0 0 64 64"><path d="M14 42c6-16 10-16 14 0s8 16 14 0 6-12 8-14" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></span>Mindflow</div>
+    <h2>¿Y si estos mensajes<br><em>se enviaran solos?</em></h2>
+    <p>Copiar y pegar plantillas ahorra tiempo. Que se envíen solas, en el momento justo y a cualquier hora, te devuelve horas cada semana. Eso es Mindflow: el asistente 24/7 que estamos creando para psicólogos.</p>
+    <ul>
+      <li>Responde a tus pacientes al instante, incluso de noche</li>
+      <li>Agenda las sesiones en tu calendario sin dobles reservas</li>
+      <li>Envía los recordatorios de 24 h y 2 h y pide confirmación</li>
+      <li>Ofrece los huecos libres a tu lista de espera</li>
+    </ul>
+    <div class="cta__price">
+      <div><small>Primera versión</small><b>Gratis</b></div>
+      <div><small>Después</small><b>$29/mes</b></div>
+      <div><small>Lista de espera</small><b>Precio fundador</b></div>
+    </div>
+    <a class="cta__btn" href="{{SITE_URL}}#acceso">Reservar mi plaza fundador →</a>
+    <div class="cta__url">{{SITE_URL_TEXT}}</div>
+    <div class="cta__legal">Plantillas de uso libre para tu consulta. Adáptalas a tu estilo y a la normativa de tu país sobre comunicación con pacientes. Mindflow es una herramienta administrativa y no sustituye la atención clínica profesional.</div>
+  </div>
+</section>
+
+</body>
+</html>

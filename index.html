@@ -34,6 +34,7 @@
         <a href="#funciones">Funciones</a>
         <a href="#video">Vídeo</a>
         <a href="#prototipo">Pruébalo</a>
+        <a href="#kit">Kit gratis</a>
         <a href="#precios">Precios</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -48,6 +49,7 @@
       <a href="#funciones">Funciones</a>
       <a href="#video">Vídeo</a>
       <a href="#prototipo">Pruébalo gratis</a>
+      <a href="#kit">Kit gratis de plantillas</a>
       <a href="#precios">Precios</a>
       <a href="#faq">Preguntas frecuentes</a>
       <a href="#acceso" class="btn btn--primary">Quiero acceso anticipado</a>
@@ -438,6 +440,63 @@
             <a href="#acceso" class="btn btn--primary btn--block magnetic">Quiero recuperar ese dinero</a>
             <small>Supuestos: los recordatorios con confirmación evitan ~50% de las ausencias y el asistente automatiza ~70% de la gestión.</small>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KIT GRATIS (lead magnet) ============ -->
+    <section class="section kit" id="kit">
+      <div class="container kit__inner">
+        <div class="kit__visual reveal" aria-hidden="true">
+          <div class="kit-book">
+            <div class="kit-book__page kit-book__page--back"></div>
+            <div class="kit-book__page kit-book__page--mid"></div>
+            <div class="kit-book__cover">
+              <span class="kit-book__brand"><span class="brand__mark"><svg viewBox="0 0 64 64"><path d="M14 42c6-16 10-16 14 0s8 16 14 0 6-12 8-14" /></svg></span>Mindflow</span>
+              <span class="kit-book__tag">Kit gratuito · PDF</span>
+              <strong>20 plantillas de mensajes <em>para psicólogos</em></strong>
+              <span class="kit-book__list">Confirmar · Recordar · Reprogramar · Cobrar</span>
+            </div>
+          </div>
+          <div class="float-card kit__badge"><div class="fc-stat">20</div><div><strong>mensajes listos</strong><span>copiar, pegar y enviar</span></div></div>
+        </div>
+
+        <div class="kit__copy reveal" data-delay="1">
+          <span class="eyebrow">Regalo para psicólogos</span>
+          <h2>¿Aún no quieres esperar a Mindflow?<br><span class="serif grad-text">Empieza hoy, gratis.</span></h2>
+          <p>Descarga el kit con <b>20 plantillas de WhatsApp y email</b> para tu consulta: primer contacto, confirmaciones, recordatorios, cancelaciones, pagos y seguimiento. Más 5 consejos para reducir ausencias.</p>
+          <ul class="kit__points">
+            <li>Mensajes profesionales listos para copiar y pegar</li>
+            <li>Pensado para consultas presenciales y online</li>
+            <li>Gratis, en PDF, directo a tu correo</li>
+          </ul>
+
+          <form class="kit-form" id="kitForm" novalidate>
+            <div class="kit-form__state" data-state="form">
+              <div class="kit-form__row">
+                <div class="field">
+                  <input type="text" id="kName" name="nombre" placeholder=" " required autocomplete="name">
+                  <label for="kName">Tu nombre</label>
+                  <small class="field__err">Escribe tu nombre</small>
+                </div>
+                <div class="field">
+                  <input type="email" id="kEmail" name="email" placeholder=" " required autocomplete="email">
+                  <label for="kEmail">Tu email</label>
+                  <small class="field__err">Introduce un email válido</small>
+                </div>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg btn--block magnetic">
+                <span class="btn__label">Quiero el kit gratis</span>
+                <span class="btn__spinner" aria-hidden="true"></span>
+              </button>
+              <p class="kit-form__micro">🔒 Sin spam. Te enviaremos el kit y novedades de Mindflow; puedes darte de baja cuando quieras.</p>
+            </div>
+            <div class="kit-form__state kit-form__success" data-state="success" hidden>
+              <div class="kit-form__ok">✅ <span id="kitSuccessText">¡Listo! Tu kit está preparado.</span></div>
+              <a class="btn btn--primary btn--lg btn--block" id="kitDownload" href="assets/kit/kit-plantillas-mindflow.pdf" download target="_blank" rel="noopener">Descargar el kit (PDF)</a>
+              <a href="#acceso" class="kit-form__next">¿Y si esos mensajes se enviaran solos? Reserva tu plaza en Mindflow →</a>
+            </div>
+          </form>
         </div>
       </div>
     </section>

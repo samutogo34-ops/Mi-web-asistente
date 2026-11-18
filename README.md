@@ -72,6 +72,21 @@ Un solo plan, todo incluido: **gratis en la primera versión** y después **USD 
 ### 4. Datos del prototipo
 Las respuestas del chat de demo (precios, horarios, enfoques de la "Psic. Laura Méndez", ficticia) están en el objeto `ANSWERS` de `main.js`.
 
+### 5. Kit gratis de plantillas (infoproducto / lead magnet)
+La sección `#kit` ofrece el PDF `assets/kit/kit-plantillas-mindflow.pdf` (20 plantillas de mensajes para psicólogos) a cambio de nombre y email. Al enviar el formulario:
+- la descarga aparece al instante en la web (aunque falle el correo), y
+- EmailJS envía la plantilla `kit` (`emails/kit.html`) con el enlace al PDF y una invitación a Mindflow.
+
+Crear la plantilla en EmailJS: *Template ID* `kit` · *Subject* `{{primer_nombre}}, aquí tienes tu kit de 20 plantillas` · *To Email* `{{email}}` · *From Name* `Mindflow` · *Reply To* `hola.mindflow.bot@gmail.com` · *Bcc* (opcional) `hola.mindflow.bot@gmail.com`.
+Variables: `nombre`, `primer_nombre`, `email`, `link_kit`, `link_web`, `fecha`.
+
+Regenerar el PDF tras editar `kit-src/kit.html`:
+
+```bash
+SITE_URL="https://tu-web/" node kit-src/render-kit.mjs           # -> assets/kit/kit-plantillas-mindflow.pdf
+node kit-src/render-kit.mjs --png out/                            # además, PNG de cada página para revisar
+```
+
 ## Regenerar el vídeo
 
 El vídeo se genera a partir de `video-src/promo.html` (animación CSS con línea de tiempo controlable), capturado fotograma a fotograma:
@@ -92,6 +107,12 @@ assets/
   js/main.js
   video/mindflow-demo.mp4
   img/video-poster.jpg, og-cover.jpg
+  img/brand/     # logo en varias versiones
+  kit/kit-plantillas-mindflow.pdf
+emails/          # plantillas de EmailJS (bienvenida, kit, aviso)
+kit-src/
+  kit.html       # fuente del PDF del kit
+  render-kit.mjs # generador del PDF
 video-src/
   promo.html     # fuente del vídeo
   render.mjs     # renderizador a MP4

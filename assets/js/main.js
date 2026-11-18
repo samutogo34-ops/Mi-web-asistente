@@ -12,6 +12,7 @@
  *   serviceId          -> Email Services (p. ej. tu Gmail conectado)
  *   welcomeTemplateId  -> plantilla de bienvenida (emails/bienvenida.html)
  *   ownerTemplateId    -> (opcional) plantilla de aviso para ti (emails/aviso-registro.html)
+ *   kitTemplateId      -> plantilla que envía el kit gratis (emails/kit.html)
  *
  * Opción B — formEndpoint: URL de Formspree, Make, Zapier, Google Apps Script o tu API.
  *
@@ -23,6 +24,7 @@ const CONFIG = {
     serviceId: "service_vxbnihv",
     welcomeTemplateId: "bienvenida",
     ownerTemplateId: "",
+    kitTemplateId: "kit", // plantilla que envía el kit gratis (emails/kit.html)
   },
   formEndpoint: "",
 };
@@ -754,6 +756,65 @@ const CONFIG = {
   const roiObs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { roiObs.disconnect(); calc(); } }, { threshold: 0.3 });
   roiObs.observe($("#calculadora"));
   Object.values(r).forEach(fill);
+
+  /* ---------------- Free kit form (lead magnet) ---------------- */
+  const kitForm = $("#kitForm");
+  if (kitForm) {
+    const kitEmailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const kitUrl = new URL("assets/kit/kit-plantillas-mindflow.pdf", location.href).href;
+    const siteUrl = location.origin + location.pathname.replace(/index\.html$/, "");
+    $$("#kitForm input").forEach((el) => el.addEventListener("input", () => el.closest(".field").classList.remove("is-invalid")));
+    kitForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = $("#kName"), email = $("#kEmail");
+      const okName = name.value.trim().length >= 2, okEmail = kitEmailRe.test(email.value.trim());
+      name.closest(".field").classList.toggle("is-invalid", !okName);
+      email.closest(".field").classList.toggle("is-invalid", !okEmail);
+      if (!okName || !okEmail) return toast("Revisa los campos marcados ✍️");
+
+      const btn = kitForm.querySelector("button[type=submit]");
+      btn.classList.add("is-loading");
+      btn.disabled = true;
+      const nombre = name.value.trim();
+      const ejs = CONFIG.emailjs;
+      let emailed = false;
+      if (ejs.publicKey && ejs.serviceId && ejs.kitTemplateId) {
+        try {
+          const r = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              service_id: ejs.serviceId,
+              template_id: ejs.kitTemplateId,
+              user_id: ejs.publicKey,
+              template_params: {
+                nombre,
+                primer_nombre: (nombre.split(" ")[0] || "").replace(/^./, (c) => c.toUpperCase()),
+                email: email.value.trim(),
+                link_kit: kitUrl,
+                link_web: siteUrl,
+                fecha: new Date().toLocaleString("es", { dateStyle: "long", timeStyle: "short" }),
+              },
+            }),
+          });
+          if (!r.ok) throw new Error("EmailJS " + r.status + ": " + (await r.text()).slice(0, 140));
+          emailed = true;
+        } catch (err) {
+          console.error("[Mindflow] No se pudo enviar el kit por correo:", err);
+        }
+      } else {
+        await sleep(600);
+      }
+      $("#kitSuccessText").textContent = emailed
+        ? "¡Listo! También te lo enviamos a " + email.value.trim() + "."
+        : "¡Listo! Tu kit está preparado.";
+      $('[data-state="form"]', kitForm).hidden = true;
+      $('[data-state="success"]', kitForm).hidden = false;
+      btn.classList.remove("is-loading");
+      btn.disabled = false;
+      confetti(kitForm);
+    });
+  }
 
   /* ---------------- Signup form ---------------- */
   const signup = $("#signupForm");
