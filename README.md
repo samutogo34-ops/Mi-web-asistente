@@ -31,7 +31,7 @@ python3 -m http.server 8080
 
 ## Publicar
 
-Al ser estática se puede publicar gratis en **GitHub Pages** (Settings → Pages → rama `main`, carpeta `/`), **Netlify** o **Vercel** arrastrando la carpeta.
+**Web en producción:** https://mindflowbotweb.netlify.app (Netlify, subida manual del ZIP). Copia en GitHub Pages: https://samutogo34-ops.github.io/Mi-web-asistente/ (se actualiza sola con cada push).
 
 ## Configuración importante
 
