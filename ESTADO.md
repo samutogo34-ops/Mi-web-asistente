@@ -31,9 +31,10 @@ Mindflow: micro SaaS para psicólogos (asistente 24/7 que agenda, responde pregu
 2. crear en EmailJS la plantilla con Template ID `kit` (contenido `emails/kit.html`; instrucciones en README §5).
 3. poner `hola.mindflow.bot@gmail.com` en **Bcc** de las plantillas `bienvenida` y `kit` para enterarse de cada registro/descarga.
 4. Completar en `privacidad.html` los datos del responsable legal (nombre, documento y ciudad) si se decide publicarlos.
-5. **Kit Pro — USD 12** (decidido). Plataforma: **Gumroad** (botón de compra en la web, con checkout superpuesto). Incluir cada plantilla en versión **tú y usted**.
-   - ⚠️ El Kit Pro NO va en este repositorio (es público). Guardarlo en un repositorio privado (p. ej. `mindflow-kit-pro`).
-   - Lanzamiento a USD 9 para la lista del kit gratis (cupón de Gumroad), luego USD 12. Propuesta: 60 plantillas + respuestas para Instagram + guía de WhatsApp Business + bonus primer mes de Mindflow gratis. Cobro con Gumroad/Hotmart. No anunciarlo en la web hasta que se pueda comprar.
+5. **Kit Pro — USD 12: CONTENIDO TERMINADO ✅** (32 páginas). Falta venderlo.
+   - Incluye: bienvenida con "tus primeros 15 minutos", 60 plantillas (tono cálido, máx. 3 emojis, redactadas en usted sin anunciarlo), 48 versiones para padres o acudientes, 10 respuestas de Instagram, guía de WhatsApp Business, 5 hábitos y bonus de un mes gratis de Mindflow.
+   - ⚠️ El PDF y su fuente NO van en este repositorio (es público). Guardarlos en un repositorio privado (p. ej. `mindflow-kit-pro`) y en el computador.
+   - Venta: Gumroad (cuenta a nombre de un adulto), con el correo del comprador estampado en el PDF. Lanzamiento a USD 9 con cupón para la lista del kit gratis, luego USD 12. Después, poner el botón de compra en la web.
 6. Empezar a contactar psicólogos (meta: 50 contactos → ≥5 registros = interés real).
 
 ## Ideas descartadas o aplazadas
