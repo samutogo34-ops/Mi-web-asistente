@@ -31,7 +31,7 @@ python3 -m http.server 8080
 
 ## Publicar
 
-**Web en producción:** https://mindflowbotweb1.netlify.app (Netlify, subida manual del ZIP). Copia en GitHub Pages: https://samutogo34-ops.github.io/Mi-web-asistente/ (se actualiza sola con cada push).
+**Web en producción:** https://mindflowbot.netlify.app (Netlify, subida manual del ZIP). Copia en GitHub Pages: https://samutogo34-ops.github.io/Mi-web-asistente/ (se actualiza sola con cada push).
 
 ## Configuración importante
 

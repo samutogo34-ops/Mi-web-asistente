@@ -12,7 +12,7 @@ Mindflow: micro SaaS para psicólogos (asistente 24/7 que agenda, responde pregu
 
 ## Hecho
 - **Web** (HTML/CSS/JS estático, rama `claude/mindflow-professional-website-bn1ady`):
-  - Producción: https://mindflowbotweb1.netlify.app (Netlify, se actualiza subiendo el ZIP de `index.html` + `assets/` en Deploys).
+  - Producción: https://mindflowbot.netlify.app (Netlify, se actualiza subiendo el ZIP de `index.html` + `assets/` en Deploys).
   - Copia: https://samutogo34-ops.github.io/Mi-web-asistente/ (GitHub Pages, se actualiza sola con cada push).
 - Secciones: hero animado, problema, cómo funciona, funciones, vídeo (40 s), prototipo interactivo (chat paciente + panel psicólogo), calculadora ROI, **kit gratis**, casos, privacidad, precio, FAQ, formulario de lista de espera.
 - **Precio**: un solo plan. Primera versión gratis; después USD 29/mes (precio fundador para siempre).
