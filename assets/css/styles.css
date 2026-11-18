@@ -556,6 +556,29 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
   .kit__badge { right: -2%; top: 0; }
 }
 
+/* kit pro */
+.kitpro__grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; }
+.kitpro__pages { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.kitpro__pages img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 24px 50px -16px rgba(0,0,0,.7); border: 1px solid var(--border); transition: transform .5s var(--ease); }
+.kitpro__pages img:nth-child(1) { transform: rotate(-3deg) translateY(10px); }
+.kitpro__pages img:nth-child(3) { transform: rotate(3deg) translateY(10px); }
+.kitpro__pages:hover img { transform: none; }
+.kitpro__card { position: relative; padding: 32px 28px; border-radius: 24px; background: linear-gradient(#0f1130, #0f1130) padding-box, var(--grad-btn) border-box; border: 1.5px solid transparent; box-shadow: 0 30px 80px -30px rgba(139,92,246,.7); display: flex; flex-direction: column; gap: 16px; }
+.kitpro__card h3 { font-size: 24px; }
+.kitpro__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 15px; color: var(--muted); }
+.kitpro__list li { position: relative; padding-left: 24px; }
+.kitpro__list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--teal); font-weight: 800; }
+.kitpro__list b { color: var(--text); }
+.kitpro__price { display: flex; align-items: baseline; gap: 6px; }
+.kitpro__price .cur { font-size: 20px; font-weight: 700; color: var(--muted); }
+.kitpro__price .amt { font-size: 54px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.kitpro__price .per { color: var(--muted); font-size: 14px; }
+.kitpro__fine { font-size: 12.5px; color: var(--dim); }
+.kitpro__guarantee { font-size: 13.5px; color: var(--muted); padding: 10px 12px; border-radius: 12px; background: rgba(45,212,191,.07); border: 1px solid rgba(45,212,191,.25); }
+.kitpro__guarantee a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1080px) { .kitpro__grid { grid-template-columns: 1fr; } .kitpro__card { max-width: 520px; margin: 0 auto; width: 100%; } }
+@media (max-width: 600px) { .kitpro__pages { gap: 8px; } .kitpro__card { padding: 24px 18px; } }
+
 /* faq */
 .faq__inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: start; }
 .faq .section-head p { margin-top: 20px; }

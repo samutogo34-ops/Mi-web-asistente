@@ -27,6 +27,9 @@ const CONFIG = {
     kitTemplateId: "kit", // plantilla que envía el kit gratis (emails/kit.html)
   },
   formEndpoint: "",
+  // Enlace del producto Kit Pro en Gumroad (p. ej. "https://tunombre.gumroad.com/l/kitpro").
+  // Mientras esté vacío, la sección del Kit Pro queda oculta.
+  kitProUrl: "",
   // Tasa aproximada para la calculadora (pesos colombianos por dólar). Actualízala si cambia mucho.
   usdToCop: 4000,
 };
@@ -758,6 +761,17 @@ const CONFIG = {
   const roiObs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { roiObs.disconnect(); calc(); } }, { threshold: 0.3 });
   roiObs.observe($("#calculadora"));
   Object.values(r).forEach(fill);
+
+  /* ---------------- Kit Pro (Gumroad) ---------------- */
+  if (CONFIG.kitProUrl) {
+    $("#kit-pro").hidden = false;
+    $$(".js-kitpro-upsell").forEach((a) => (a.hidden = false));
+    $$(".js-kitpro-link").forEach((a) => { a.href = CONFIG.kitProUrl; });
+    const g = document.createElement("script");
+    g.src = "https://gumroad.com/js/gumroad.js";
+    g.async = true;
+    document.body.appendChild(g);
+  }
 
   /* ---------------- Free kit form (lead magnet) ---------------- */
   const kitForm = $("#kitForm");
