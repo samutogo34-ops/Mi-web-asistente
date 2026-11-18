@@ -33,8 +33,8 @@ Mindflow: micro SaaS para psicólogos (asistente 24/7 que agenda, responde pregu
 4. Completar en `privacidad.html` los datos del responsable legal (nombre, documento y ciudad) si se decide publicarlos.
 5. **Kit Pro — USD 12: CONTENIDO TERMINADO ✅** (32 páginas). Falta venderlo.
    - Incluye: bienvenida con "tus primeros 15 minutos", 60 plantillas (tono cálido, máx. 3 emojis, redactadas en usted sin anunciarlo), 48 versiones para padres o acudientes, 10 respuestas de Instagram, guía de WhatsApp Business, 5 hábitos y bonus de un mes gratis de Mindflow.
-   - ⚠️ El PDF y su fuente NO van en este repositorio (es público). Guardarlos en un repositorio privado (p. ej. `mindflow-kit-pro`) y en el computador.
-   - Venta: Gumroad (cuenta a nombre de un adulto), con el correo del comprador estampado en el PDF. Lanzamiento a USD 9 con cupón para la lista del kit gratis, luego USD 12. Después, poner el botón de compra en la web.
+   - ⚠️ El PDF y su fuente NO van en este repositorio (es público). Están guardados en el repositorio **privado** `samutogo34-ops/mindflowkitpro` (PDF en `pdf/`, fuente en `fuente/`).
+   - Venta: Gumroad (cuenta a nombre de un adulto), con el correo del comprador estampado en el PDF. Lanzamiento a USD 9 con cupón para la lista del kit gratis, luego USD 12. La sección `#kit-pro` de la web ya está hecha y oculta: se activa sola al poner el enlace de Gumroad en `CONFIG.kitProUrl` (`assets/js/main.js`).
 6. Empezar a contactar psicólogos (meta: 50 contactos → ≥5 registros = interés real).
 
 ## Ideas descartadas o aplazadas
