@@ -14,7 +14,7 @@ const { chromium } = require("playwright");
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
-const siteUrl = process.env.SITE_URL || "https://mindflowbotweb.netlify.app/";
+const siteUrl = process.env.SITE_URL || "https://mindflowbotweb1.netlify.app/";
 const siteText = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
 const html = readFileSync(path.join(here, "kit.html"), "utf8")
