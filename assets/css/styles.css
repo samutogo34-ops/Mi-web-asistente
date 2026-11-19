@@ -634,7 +634,7 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .success-ticket b { font-size: 26px; letter-spacing: .08em; color: var(--teal); font-variant-numeric: tabular-nums; }
 
 /* footer */
-.footer { border-top: 1px solid var(--border); padding: 56px 0 32px; background: #05060f; }
+.footer { border-top: 1px solid var(--border); padding: 56px 0 96px; background: #05060f; } /* espacio abajo para la insignia de Netlify */
 .footer__inner { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 .footer__inner p { color: var(--muted); margin-top: 12px; font-size: 14px; max-width: 320px; }
 .footer nav { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: flex-start; }
