@@ -1,3 +1,6 @@
 # Paquetes generados para descarga manual
 mindflow-web.zip
 mindflow.bundle
+kit-src/*.html
+kit-src/*.pdf
+kit-src/__pycache__/

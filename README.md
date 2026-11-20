@@ -80,11 +80,11 @@ La sección `#kit` ofrece el PDF `assets/kit/kit-plantillas-mindflow.pdf` (20 pl
 Crear la plantilla en EmailJS: *Template ID* `kit` · *Subject* `{{primer_nombre}}, aquí tienes tu kit de 20 plantillas` · *To Email* `{{email}}` · *From Name* `Mindflow` · *Reply To* `hola.mindflow.bot@gmail.com` · *Bcc* (opcional) `hola.mindflow.bot@gmail.com`.
 Variables: `nombre`, `primer_nombre`, `email`, `link_kit`, `link_web`, `fecha`.
 
-Regenerar el PDF tras editar `kit-src/kit.html`:
+Regenerar el PDF tras editar los textos en `kit-src/data_free.py`:
 
 ```bash
-SITE_URL="https://tu-web/" node kit-src/render-kit.mjs           # -> assets/kit/kit-plantillas-mindflow.pdf
-node kit-src/render-kit.mjs --png out/                            # además, PNG de cada página para revisar
+python3 kit-src/build_free.py      # genera el HTML (portada, cuerpo y cierre)
+node kit-src/render-kit.mjs        # -> assets/kit/kit-plantillas-mindflow.pdf
 ```
 
 ## Regenerar el vídeo
