@@ -21,19 +21,20 @@ Mindflow: micro SaaS para psicólogos (asistente 24/7 que agenda, responde pregu
   - Gmail del proyecto: hola.mindflow.bot@gmail.com
   - EmailJS: servicio `service_vxbnihv`, plantilla `bienvenida`, public key en `assets/js/main.js`.
 - **Kit gratis** "20 plantillas de mensajes para psicólogos" (PDF en `assets/kit/`, fuente en `kit-src/`). Se descarga al instante en la web. Correo de entrega con EmailJS (plantilla `kit`) — FUNCIONA ✅
+- **Bcc** a hola.mindflow.bot@gmail.com en las plantillas `bienvenida` y `kit`: cada registro o descarga llega como copia.
+- **Botones para compartir** Mindflow (WhatsApp, LinkedIn, copiar enlace; menú nativo en celular) tras apuntarse, tras descargar el kit y en una franja antes del pie.
 - **Logo** en `assets/img/brand/` (perfil, icono, horizontal claro/oscuro). Ya puesto como foto del Gmail del proyecto.
 - Mensajes para invitar psicólogos (correo, Instagram, recordatorio, grupos) escritos en el chat; usar el link de Netlify.
 - **Mercado: Colombia.** Textos en español de Colombia (video, celular), precios de la demo y calculadora en pesos (COP; tasa aprox. en `CONFIG.usdToCop`), y precios de Mindflow escritos como "USD 29".
 - **Páginas legales**: `privacidad.html` (política de tratamiento de datos, Ley 1581 de 2012) y `reembolsos.html` (garantía de 14 días). Enlazadas en el pie y en los formularios.
 
 ## Pendiente (en orden)
-1. Comprobar que `hola.mindflow.bot@gmail.com` está en **Bcc** de las plantillas `bienvenida` y `kit` para enterarse de cada registro/descarga.
-2. Completar en `privacidad.html` los datos del responsable legal (nombre, documento y ciudad) si se decide publicarlos.
-3. **Kit Pro — USD 12: CONTENIDO TERMINADO ✅** (32 páginas). Falta venderlo.
+1. Completar en `privacidad.html` los datos del responsable legal (nombre, documento y ciudad) si se decide publicarlos.
+2. **Kit Pro — USD 12: CONTENIDO TERMINADO ✅** (32 páginas). Falta venderlo.
    - Incluye: bienvenida con "tus primeros 15 minutos", 60 plantillas (tono cálido, máx. 3 emojis, redactadas en usted sin anunciarlo), 48 versiones para padres o acudientes, 10 respuestas de Instagram, guía de WhatsApp Business, 5 hábitos y bonus de un mes gratis de Mindflow.
    - ⚠️ El PDF y su fuente NO van en este repositorio (es público). Están guardados en el repositorio **privado** `samutogo34-ops/mindflowkitpro` (PDF en `pdf/`, fuente en `fuente/`).
    - Venta: Gumroad (cuenta a nombre de un adulto), con el correo del comprador estampado en el PDF. Lanzamiento a USD 9 con cupón para la lista del kit gratis, luego USD 12. La sección `#kit-pro` de la web ya está hecha y oculta: se activa sola al poner el enlace de Gumroad en `CONFIG.kitProUrl` (`assets/js/main.js`).
-4. Empezar a contactar psicólogos (meta: 50 contactos → ≥5 registros = interés real).
+3. Empezar a contactar psicólogos (meta: 50 contactos → ≥5 registros = interés real).
 
 ## Ideas descartadas o aplazadas
 - Planes múltiples (se eligió un solo precio).

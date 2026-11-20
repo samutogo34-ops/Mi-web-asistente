@@ -762,6 +762,34 @@ const CONFIG = {
   roiObs.observe($("#calculadora"));
   Object.values(r).forEach(fill);
 
+  /* ---------------- Compartir Mindflow (boca a boca) ---------------- */
+  {
+    const shareUrl = (document.querySelector('link[rel="canonical"]') || {}).href || location.origin + location.pathname;
+    const shareText = "Mira Mindflow: un asistente 24/7 para psicólogos que agenda citas, responde preguntas y envía recordatorios. Tiene un kit gratis de plantillas de mensajes 🤍";
+    const canNativeShare = !!navigator.share && window.matchMedia("(hover: none)").matches;
+    $$("[data-share]").forEach((box) => {
+      const wa = $("[data-share-wa]", box);
+      wa.href = "https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl);
+      $("[data-share-in]", box).href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(shareUrl);
+      if (canNativeShare) {
+        // En el celular, usar el menú de compartir del propio teléfono
+        wa.textContent = "📤 Compartir";
+        wa.addEventListener("click", (e) => {
+          e.preventDefault();
+          navigator.share({ title: "Mindflow", text: shareText, url: shareUrl }).catch(() => {});
+        });
+      }
+      $("[data-share-copy]", box).addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          toast("🔗 Enlace copiado. ¡Gracias por compartir!");
+        } catch (_) {
+          window.prompt("Copia este enlace:", shareUrl);
+        }
+      });
+    });
+  }
+
   /* ---------------- Kit Pro (Gumroad) ---------------- */
   if (CONFIG.kitProUrl) {
     $("#kit-pro").hidden = false;
