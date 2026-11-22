@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mindflow · publicaciones de Instagram (fuente)</title>
+<!-- Cada .post mide 1080×1350 (formato vertical 4:5 de Instagram). Se exportan con render.mjs -->
+<style>
+  @font-face { font-family: "Instrument Serif"; font-style: italic; src: url(instrument-serif-italic.woff2) format("woff2"); }
+  :root { --bg:#070816; --text:#eef0ff; --muted:#a7acd0; --violet:#8b5cf6; --teal:#2dd4bf;
+    --grad: linear-gradient(120deg,#a78bfa 0%,#818cf8 35%,#2dd4bf 100%);
+    --grad-btn: linear-gradient(120deg,#8b5cf6 0%,#6366f1 50%,#14b8a6 100%); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#222; font-family:"Inter",Arial,sans-serif; color:var(--text); -webkit-font-smoothing:antialiased; }
+  .post { width:1080px; height:1350px; position:relative; overflow:hidden; background:var(--bg); padding:96px 88px; display:flex; flex-direction:column; margin-bottom:40px; isolation:isolate; }
+  .post::before { content:""; position:absolute; inset:-20%; z-index:-1; filter:blur(90px); opacity:.6;
+    background: radial-gradient(35% 30% at 80% 18%, #6d28d9, transparent 70%), radial-gradient(35% 30% at 15% 85%, #0f766e, transparent 70%), radial-gradient(30% 25% at 30% 35%, #3730a3, transparent 70%); }
+  .post::after { content:""; position:absolute; inset:0; z-index:-1; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:72px 72px; -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 45%,#000 30%,transparent 85%); }
+  .brand { display:flex; align-items:center; gap:16px; font-weight:800; font-size:38px; letter-spacing:-0.03em; }
+  .brand img { width:64px; height:64px; }
+  .serif { font-family:"Instrument Serif",Georgia,serif; font-style:italic; font-weight:400; letter-spacing:-0.01em; }
+  .grad { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  h1 { font-size:112px; line-height:1.0; letter-spacing:-0.045em; font-weight:800; }
+  h1 .serif { font-size:1.08em; }
+  h2 { font-size:80px; line-height:1.03; letter-spacing:-0.04em; font-weight:800; }
+  h2 .serif { font-size:1.1em; }
+  .lead { font-size:36px; line-height:1.45; color:var(--muted); }
+  .lead b { color:var(--text); }
+  .pill { align-self:flex-start; display:inline-flex; align-items:center; gap:12px; padding:14px 26px; border-radius:999px; font-size:26px; font-weight:600; background:rgba(139,92,246,.16); border:1.5px solid rgba(167,139,250,.5); color:#ddd6fe; }
+  .pill i { width:14px; height:14px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 6px rgba(45,212,191,.2); }
+  .foot { margin-top:auto; display:flex; justify-content:space-between; align-items:center; font-size:26px; color:var(--muted); padding-top:28px; border-top:1.5px solid rgba(255,255,255,.12); }
+  .foot b { color:var(--text); }
+  .page-n { font-size:24px; color:var(--muted); }
+
+  /* 1 · presentación */
+  .p1 .main { margin-top:auto; display:flex; flex-direction:column; gap:44px; padding-bottom:64px; }
+  .chips { display:flex; gap:18px; flex-wrap:wrap; }
+  .chips span { padding:16px 26px; border-radius:20px; background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.14); font-size:30px; font-weight:600; }
+
+  /* 2 · el problema */
+  .p2 h2 { margin-top:44px; font-size:74px; }
+  .bubbles { margin-top:44px; display:flex; flex-direction:column; gap:18px; }
+  .b { max-width:78%; padding:20px 30px; border-radius:32px; font-size:30px; line-height:1.3; }
+  .b.in { align-self:flex-start; background:#1b1e3c; border-bottom-left-radius:10px; }
+  .b.in:nth-child(2) { margin-left:60px; }
+  .b.in:nth-child(3) { margin-left:20px; }
+  .b.out { align-self:flex-end; background:linear-gradient(135deg,#7c3aed,#4f46e5); border-bottom-right-radius:10px; }
+  .b small { display:block; font-size:22px; opacity:.55; margin-top:6px; }
+  .p2 .lead { margin-top:40px; font-size:33px; }
+
+  /* 3 · valor */
+  .p3 h2 { margin-top:56px; font-size:76px; }
+  .tips { margin-top:54px; display:flex; flex-direction:column; gap:26px; }
+  .tip { display:flex; gap:28px; padding:32px 34px; border-radius:30px; background:rgba(255,255,255,.05); border:1.5px solid rgba(255,255,255,.12); }
+  .tip .n { flex:none; width:72px; height:72px; border-radius:22px; background:var(--grad-btn); display:grid; place-items:center; font-weight:800; font-size:36px; }
+  .tip strong { display:block; font-size:36px; letter-spacing:-0.01em; margin-bottom:8px; }
+  .tip span { font-size:28px; line-height:1.4; color:var(--muted); }
+  .tip q { display:block; margin-top:14px; font-size:26px; color:#c4b5fd; quotes:"“" "”"; }
+
+  /* 4 · kit gratis */
+  .p4 { flex-direction:row; padding:0; }
+  .p4 .copy { width:56%; padding:96px 0 96px 88px; display:flex; flex-direction:column; gap:40px; position:relative; z-index:2; }
+  .p4 h2 { font-size:84px; }
+  .checks { display:flex; flex-direction:column; gap:20px; font-size:31px; }
+  .checks div::before { content:"✓"; color:var(--teal); font-weight:800; margin-right:16px; }
+  .cta { align-self:flex-start; padding:26px 44px; border-radius:999px; background:var(--grad-btn); font-weight:800; font-size:36px; box-shadow:0 24px 60px -16px rgba(139,92,246,.8); }
+  .p4 .book { position:absolute; right:-150px; top:52%; width:520px; transform:translateY(-50%) rotate(6deg); border-radius:14px; box-shadow:0 60px 120px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.15); }
+  .p4 .free { position:absolute; right:150px; top:200px; z-index:3; padding:18px 30px; border-radius:999px; background:#2dd4bf; color:#05291f; font-weight:800; font-size:34px; transform:rotate(-8deg); box-shadow:0 20px 40px -10px rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+
+<!-- 1 · Presentación -->
+<section class="post p1">
+  <div class="brand"><img src="mindflow-icono.png" alt="">Mindflow</div>
+  <div class="main">
+    <span class="pill"><i></i>Próximamente · Lista de espera abierta</span>
+    <h1>Tu consulta funciona sola.<br><span class="serif grad">Incluso mientras duermes.</span></h1>
+    <p class="lead">El asistente 24/7 para psicólogos que <b>agenda tus citas</b>, <b>responde las preguntas</b> de tus pacientes y <b>envía los recordatorios</b> por ti.</p>
+    <div class="chips"><span>📅 Agenda</span><span>💬 Responde</span><span>🔔 Recuerda</span></div>
+  </div>
+  <div class="foot"><span>🤍 Hecho para psicólogos en Colombia</span><b>Link en la bio</b></div>
+</section>
+
+<!-- 2 · El problema -->
+<section class="post p2">
+  <div class="brand"><img src="mindflow-icono.png" alt="">Mindflow</div>
+  <h2>¿Cuántas veces a la semana respondes<br><span class="serif grad">lo mismo?</span></h2>
+  <div class="bubbles">
+    <div class="b in">Hola, ¿cuánto cuesta la sesión?<small>22:47</small></div>
+    <div class="b in">¿Tiene cupo esta semana?<small>07:15</small></div>
+    <div class="b in">Perdón, ¿a qué hora era mi cita? 😅<small>13:02</small></div>
+    <div class="b out">Hola 🤍 Ya le respondo…<small>tú, entre sesión y sesión</small></div>
+  </div>
+  <p class="lead">Son mensajes que llegan a cualquier hora y que te quitan tiempo y energía. <b>Mindflow los responde por ti, al instante.</b></p>
+  <div class="foot"><span>🤍 Mindflow · El asistente 24/7 para psicólogos</span><b>Link en la bio</b></div>
+</section>
+
+<!-- 3 · Contenido útil -->
+<section class="post p3">
+  <div class="brand"><img src="mindflow-icono.png" alt="">Mindflow</div>
+  <h2>3 mensajes que <span class="serif grad">reducen las ausencias</span></h2>
+  <div class="tips">
+    <div class="tip"><span class="n">1</span><div><strong>Recordatorio 24 h antes</strong><span>Y pide que confirmen: una respuesta compromete más que un aviso.</span><q>¿Me confirma su asistencia respondiendo "Sí"? 🤍</q></div></div>
+    <div class="tip"><span class="n">2</span><div><strong>Recordatorio 2 h antes</strong><span>Corto y cálido, para evitar olvidos de última hora.</span><q>¡Hola! Nos vemos hoy a las 4:00 p. m. Le espero 🌿</q></div></div>
+    <div class="tip"><span class="n">3</span><div><strong>Tu política, desde la primera cita</strong><span>Si la acuerdan al agendar, aplicarla después no incomoda a nadie.</span><q>Si necesita cambiarla, avíseme con 24 horas de anticipación.</q></div></div>
+  </div>
+  <div class="foot"><span>💾 Guárdalo para tu consulta</span><b>Más plantillas gratis en la bio</b></div>
+</section>
+
+<!-- 4 · Kit gratis -->
+<section class="post p4">
+  <div class="copy">
+    <div class="brand"><img src="mindflow-icono.png" alt="">Mindflow</div>
+    <h2>20 mensajes listos para tu consulta.<br><span class="serif grad">Gratis.</span></h2>
+    <div class="checks">
+      <div>Confirmaciones y recordatorios</div>
+      <div>Cancelaciones y pagos</div>
+      <div>Versión para padres o acudientes</div>
+      <div>5 consejos contra las ausencias</div>
+    </div>
+    <div class="cta">Descárgalo en la bio 👆</div>
+  </div>
+  <img class="book" src="kit-cover-01.png" alt="">
+  <span class="free">GRATIS</span>
+</section>
+
+</body>
+</html>

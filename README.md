@@ -31,7 +31,7 @@ python3 -m http.server 8080
 
 ## Publicar
 
-**Web en producción:** https://mindflowbotweb.netlify.app (Netlify, subida manual del ZIP). Copia en GitHub Pages: https://samutogo34-ops.github.io/Mi-web-asistente/ (se actualiza sola con cada push).
+**Web en producción:** https://mindflowbot.netlify.app (Netlify, subida manual del ZIP). Copia en GitHub Pages: https://samutogo34-ops.github.io/Mi-web-asistente/ (se actualiza sola con cada push).
 
 ## Configuración importante
 
@@ -80,11 +80,11 @@ La sección `#kit` ofrece el PDF `assets/kit/kit-plantillas-mindflow.pdf` (20 pl
 Crear la plantilla en EmailJS: *Template ID* `kit` · *Subject* `{{primer_nombre}}, aquí tienes tu kit de 20 plantillas` · *To Email* `{{email}}` · *From Name* `Mindflow` · *Reply To* `hola.mindflow.bot@gmail.com` · *Bcc* (opcional) `hola.mindflow.bot@gmail.com`.
 Variables: `nombre`, `primer_nombre`, `email`, `link_kit`, `link_web`, `fecha`.
 
-Regenerar el PDF tras editar `kit-src/kit.html`:
+Regenerar el PDF tras editar los textos en `kit-src/data_free.py`:
 
 ```bash
-SITE_URL="https://tu-web/" node kit-src/render-kit.mjs           # -> assets/kit/kit-plantillas-mindflow.pdf
-node kit-src/render-kit.mjs --png out/                            # además, PNG de cada página para revisar
+python3 kit-src/build_free.py      # genera el HTML (portada, cuerpo y cierre)
+node kit-src/render-kit.mjs        # -> assets/kit/kit-plantillas-mindflow.pdf
 ```
 
 ## Regenerar el vídeo

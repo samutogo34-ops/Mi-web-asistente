@@ -27,6 +27,11 @@ const CONFIG = {
     kitTemplateId: "kit", // plantilla que envía el kit gratis (emails/kit.html)
   },
   formEndpoint: "",
+  // Enlace del producto Kit Pro en Gumroad (p. ej. "https://tunombre.gumroad.com/l/kitpro").
+  // Mientras esté vacío, la sección del Kit Pro queda oculta.
+  kitProUrl: "",
+  // Tasa aproximada para la calculadora (pesos colombianos por dólar). Actualízala si cambia mucho.
+  usdToCop: 4000,
 };
 
 (() => {
@@ -503,14 +508,14 @@ const CONFIG = {
   ];
 
   const ANSWERS = {
-    price: "La sesión individual cuesta <b>$40</b> (50 min) y la de pareja <b>$55</b>. Hay un pack de 4 sesiones con 10% de descuento. Puedes pagar con tarjeta o transferencia 💳",
+    price: "La sesión individual cuesta <b>$150.000</b> (50 min) y la de pareja <b>$200.000</b>. Hay un paquete de 4 sesiones con 10% de descuento. Puedes pagar con tarjeta, transferencia o Nequi 💳",
     online: "¡Sí! Laura atiende <b>presencial y online</b> por videollamada segura. Te envío el enlace automáticamente al confirmar la cita, sin instalar nada 💻",
     first: "La primera sesión es para conocerse 🌱: hablarás de lo que te trae a consulta, tus objetivos y resolverás tus dudas sobre el proceso. Dura 50 minutos y no necesitas preparar nada.",
     cancel: "Puedes cancelar o cambiar tu cita <b>gratis hasta 24 h antes</b>, respondiendo a cualquier recordatorio o escribiéndome aquí. Yo me encargo de buscarte otro horario 🔁",
     topics: "Sí, Laura trabaja con <b>ansiedad, estrés, depresión, autoestima, duelo y terapia de pareja</b>, desde un enfoque cognitivo-conductual e integrativo. En la primera sesión valoraréis juntos cómo abordarlo.",
-    location: "La consulta presencial está en el centro de la ciudad, a 3 minutos del metro 📍 Al confirmar te envío la ubicación exacta en Google Maps.",
+    location: "La consulta presencial está en una zona central y de fácil acceso 📍 Al confirmar te envío la ubicación exacta en Google Maps.",
     hours: "Laura atiende de <b>lunes a viernes</b>, de 9:00 a 13:00 y de 16:00 a 20:00. Yo respondo 24/7 y puedo agendarte a cualquier hora 🕐",
-    invoice: "Sí, recibes <b>factura automática</b> después de cada sesión, válida para reembolso de tu seguro médico si tu póliza lo cubre 🧾",
+    invoice: "Sí, recibes <b>factura automática</b> después de cada sesión, válida para reembolso si tu póliza o medicina prepagada lo cubre 🧾",
     greet: "¡Hola! 👋 ¿En qué puedo ayudarte? Puedo agendarte una cita o resolver cualquier duda sobre la consulta.",
     thanks: "¡Con gusto! 💜 Si necesitas algo más, aquí estoy a cualquier hora.",
     crisis: "Gracias por escribir. Lo que sientes importa. <b>Si estás en peligro o piensas en hacerte daño, llama ahora al número de emergencias de tu país</b> o acude a urgencias. Ya he avisado a Laura para que se ponga en contacto contigo lo antes posible. No estás solo/a 💜",
@@ -717,7 +722,7 @@ const CONFIG = {
 
   /* ---------------- ROI calculator ---------------- */
   const r = { s: $("#rSessions"), p: $("#rPrice"), n: $("#rNoShow"), a: $("#rAdmin") };
-  const money = (v) => "$" + Math.round(v).toLocaleString("es");
+  const money = (v) => "$" + Math.round(v).toLocaleString("es-CO");
   let shown = 0;
   function fill(el) {
     const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
@@ -726,7 +731,7 @@ const CONFIG = {
   function calc() {
     const s = +r.s.value, p = +r.p.value, n = +r.n.value, a = +r.a.value;
     $("#oSessions").textContent = s;
-    $("#oPrice").textContent = "$" + p;
+    $("#oPrice").textContent = money(p);
     $("#oNoShow").textContent = n + "%";
     $("#oAdmin").textContent = a + " h";
     Object.values(r).forEach(fill);
@@ -735,9 +740,9 @@ const CONFIG = {
     const hours = a * 4.33 * 0.7;
     $("#roiHours").textContent = Math.round(hours) + " h";
     $("#roiSessions").textContent = Math.round(savedSessions);
-    const times = moneyVal / 29;
+    const times = moneyVal / (29 * CONFIG.usdToCop);
     $("#roiTimes").textContent = (times >= 10 ? Math.round(times) : times.toFixed(1).replace(".", ",")) + "×";
-    $("#roiBar").style.width = Math.min(100, (moneyVal / 2000) * 100) + "%";
+    $("#roiBar").style.width = Math.min(100, (moneyVal / (2000 * CONFIG.usdToCop)) * 100) + "%";
     animateMoney(moneyVal);
   }
   let moneyRaf;
@@ -756,6 +761,45 @@ const CONFIG = {
   const roiObs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { roiObs.disconnect(); calc(); } }, { threshold: 0.3 });
   roiObs.observe($("#calculadora"));
   Object.values(r).forEach(fill);
+
+  /* ---------------- Compartir Mindflow (boca a boca) ---------------- */
+  {
+    const shareUrl = (document.querySelector('link[rel="canonical"]') || {}).href || location.origin + location.pathname;
+    const shareText = "Mira Mindflow: un asistente 24/7 para psicólogos que agenda citas, responde preguntas y envía recordatorios. Tiene un kit gratis de plantillas de mensajes 🤍";
+    const canNativeShare = !!navigator.share && window.matchMedia("(hover: none)").matches;
+    $$("[data-share]").forEach((box) => {
+      const wa = $("[data-share-wa]", box);
+      wa.href = "https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl);
+      $("[data-share-in]", box).href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(shareUrl);
+      if (canNativeShare) {
+        // En el celular, usar el menú de compartir del propio teléfono
+        wa.textContent = "📤 Compartir";
+        wa.addEventListener("click", (e) => {
+          e.preventDefault();
+          navigator.share({ title: "Mindflow", text: shareText, url: shareUrl }).catch(() => {});
+        });
+      }
+      $("[data-share-copy]", box).addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          toast("🔗 Enlace copiado. ¡Gracias por compartir!");
+        } catch (_) {
+          window.prompt("Copia este enlace:", shareUrl);
+        }
+      });
+    });
+  }
+
+  /* ---------------- Kit Pro (Gumroad) ---------------- */
+  if (CONFIG.kitProUrl) {
+    $("#kit-pro").hidden = false;
+    $$(".js-kitpro-upsell").forEach((a) => (a.hidden = false));
+    $$(".js-kitpro-link").forEach((a) => { a.href = CONFIG.kitProUrl; });
+    const g = document.createElement("script");
+    g.src = "https://gumroad.com/js/gumroad.js";
+    g.async = true;
+    document.body.appendChild(g);
+  }
 
   /* ---------------- Free kit form (lead magnet) ---------------- */
   const kitForm = $("#kitForm");

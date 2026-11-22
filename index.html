@@ -9,12 +9,12 @@
   <meta property="og:title" content="Mindflow — Tu consulta funciona sola, incluso mientras duermes">
   <meta property="og:description" content="Agenda, responde y recuerda por ti. El asistente 24/7 diseñado para psicólogos.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mindflowbotweb.netlify.app/">
-  <meta property="og:image" content="https://mindflowbotweb.netlify.app/assets/img/og-cover.jpg">
+  <meta property="og:url" content="https://mindflowbot.netlify.app/">
+  <meta property="og:image" content="https://mindflowbot.netlify.app/assets/img/og-cover.jpg">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://mindflowbotweb.netlify.app/">
+  <link rel="canonical" href="https://mindflowbot.netlify.app/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238B5CF6'/%3E%3Cstop offset='1' stop-color='%232DD4BF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M14 42c6-16 10-16 14 0s8 16 14 0 6-12 8-14' stroke='white' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
       <nav class="nav__links" aria-label="Principal">
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#funciones">Funciones</a>
-        <a href="#video">Vídeo</a>
+        <a href="#video">Video</a>
         <a href="#prototipo">Pruébalo</a>
         <a href="#kit">Kit gratis</a>
         <a href="#precios">Precios</a>
@@ -52,7 +52,7 @@
     <div class="mobile-menu" aria-hidden="true">
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#funciones">Funciones</a>
-      <a href="#video">Vídeo</a>
+      <a href="#video">Video</a>
       <a href="#prototipo">Pruébalo gratis</a>
       <a href="#kit">Kit gratis de plantillas</a>
       <a href="#precios">Precios</a>
@@ -90,7 +90,7 @@
             </a>
             <a href="#video" class="btn btn--ghost btn--lg">
               <span class="play-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-              Ver vídeo · 40 s
+              Ver video · 40 s
             </a>
           </div>
           <ul class="hero__trust reveal" data-delay="4">
@@ -299,9 +299,9 @@
           <div class="video-wrap">
             <video id="promoVideo" preload="metadata" playsinline poster="assets/img/video-poster.jpg">
               <source src="assets/video/mindflow-demo.mp4" type="video/mp4">
-              Tu navegador no soporta vídeo HTML5.
+              Tu navegador no soporta video HTML5.
             </video>
-            <button class="video-play" aria-label="Reproducir vídeo">
+            <button class="video-play" aria-label="Reproducir video">
               <span class="video-play__ring"></span>
               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
@@ -419,8 +419,8 @@
             <input type="range" id="rSessions" min="5" max="60" value="20">
           </div>
           <div class="range">
-            <label for="rPrice">Precio por sesión <output id="oPrice">$40</output></label>
-            <input type="range" id="rPrice" min="15" max="200" step="5" value="40">
+            <label for="rPrice">Precio por sesión (COP) <output id="oPrice">$150.000</output></label>
+            <input type="range" id="rPrice" min="50000" max="400000" step="10000" value="150000">
           </div>
           <div class="range">
             <label for="rNoShow">Ausencias o cancelaciones tardías <output id="oNoShow">12%</output></label>
@@ -441,9 +441,9 @@
               <div><b id="roiSessions">0</b><span>sesiones salvadas al mes</span></div>
             </div>
             <div class="roi__bar"><span id="roiBar"></span></div>
-            <p class="roi__foot">Mindflow se paga <b id="roiTimes">0×</b> sola con sus $29 al mes.</p>
+            <p class="roi__foot">Mindflow se paga <b id="roiTimes">0×</b> sola con sus USD 29 al mes.</p>
             <a href="#acceso" class="btn btn--primary btn--block magnetic">Quiero recuperar ese dinero</a>
-            <small>Supuestos: los recordatorios con confirmación evitan ~50% de las ausencias y el asistente automatiza ~70% de la gestión.</small>
+            <small>Supuestos: los recordatorios con confirmación evitan ~50% de las ausencias y el asistente automatiza ~70% de la gestión. Conversión aproximada: 1 USD ≈ 4.000 COP.</small>
           </div>
         </div>
       </div>
@@ -472,7 +472,8 @@
           <p>Descarga el kit con <b>20 plantillas de WhatsApp y email</b> para tu consulta: primer contacto, confirmaciones, recordatorios, cancelaciones, pagos y seguimiento. Más 5 consejos para reducir ausencias.</p>
           <ul class="kit__points">
             <li>Mensajes profesionales listos para copiar y pegar</li>
-            <li>Pensado para consultas presenciales y online</li>
+            <li>Con versiones para padres o acudientes (niños y adolescentes)</li>
+            <li>Pensado para consultas presenciales y virtuales</li>
             <li>Gratis, en PDF, directo a tu correo</li>
           </ul>
 
@@ -494,14 +495,59 @@
                 <span class="btn__label">Quiero el kit gratis</span>
                 <span class="btn__spinner" aria-hidden="true"></span>
               </button>
-              <p class="kit-form__micro">🔒 Sin spam. Te enviaremos el kit y novedades de Mindflow; puedes darte de baja cuando quieras.</p>
+              <p class="kit-form__micro">🔒 Sin spam. Te enviaremos el kit y novedades de Mindflow; puedes darte de baja cuando quieras. Al pedirlo aceptas la <a href="privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a>.</p>
             </div>
             <div class="kit-form__state kit-form__success" data-state="success" hidden>
               <div class="kit-form__ok">✅ <span id="kitSuccessText">¡Listo! Tu kit está preparado.</span></div>
-              <a class="btn btn--primary btn--lg btn--block" id="kitDownload" href="assets/kit/kit-plantillas-mindflow.pdf" download target="_blank" rel="noopener">Descargar el kit (PDF)</a>
+              <a class="btn btn--primary btn--lg btn--block" id="kitDownload" href="assets/kit/kit-plantillas-mindflow.pdf" target="_blank" rel="noopener">Abrir el kit (PDF)</a>
+<div class="share share--kit" data-share>
+              <p class="share__title">¿Un colega también escribe los mismos mensajes cada día? Regálale el kit 🤍</p>
+              <div class="share__btns">
+                <a class="share__btn share__btn--wa" data-share-wa href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+                <a class="share__btn" data-share-in href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+                <button type="button" class="share__btn" data-share-copy>🔗 Copiar enlace</button>
+              </div>
+            </div>
+              <a href="#kit-pro" class="kit-form__next js-kitpro-upsell" hidden>¿Quieres 40 plantillas más y versiones para padres? Mira el Kit Pro →</a>
               <a href="#acceso" class="kit-form__next">¿Y si esos mensajes se enviaran solos? Reserva tu plaza en Mindflow →</a>
             </div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KIT PRO (de pago, Gumroad) ============ -->
+    <section class="section kitpro" id="kit-pro" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kit Pro · Edición Colombia</span>
+          <h2>¿Quieres el kit completo?<br><span class="serif grad-text">60 plantillas para cada situación.</span></h2>
+          <p>Todo lo del kit gratis y mucho más: festivos y vacaciones, pagos con Nequi y cuenta de cobro, límites y situaciones delicadas, y una versión para padres o acudientes debajo de casi cada mensaje.</p>
+        </div>
+
+        <div class="kitpro__grid">
+          <div class="kitpro__pages reveal" aria-label="Vista previa del Kit Pro">
+            <img src="assets/img/kitpro/pagina-1.jpg" alt="Portada del Kit Pro: 60 plantillas de mensajes para psicólogos" loading="lazy" width="560" height="792">
+            <img src="assets/img/kitpro/pagina-2.jpg" alt="Página de bienvenida del Kit Pro con los primeros 15 minutos" loading="lazy" width="560" height="792">
+            <img src="assets/img/kitpro/pagina-6.jpg" alt="Ejemplo de plantillas con versión para padres o acudientes" loading="lazy" width="560" height="792">
+          </div>
+
+          <div class="kitpro__card reveal" data-delay="1">
+            <div class="offer__tag">Pago único · Descarga inmediata</div>
+            <h3>Kit Pro de mensajes</h3>
+            <ul class="kitpro__list">
+              <li><b>60 plantillas</b> cálidas y profesionales, listas para copiar</li>
+              <li><b>48 versiones para padres o acudientes</b> (niños y adolescentes)</li>
+              <li><b>10 respuestas para Instagram</b> y plantilla de biografía</li>
+              <li><b>Guía de WhatsApp Business</b> con atajos de respuestas rápidas</li>
+              <li>Pagos con Nequi, Daviplata y cuenta de cobro</li>
+              <li>🎁 Bonus: <b>un mes gratis de Mindflow</b> cuando lance</li>
+            </ul>
+            <div class="kitpro__price"><span class="cur">USD</span><span class="amt">12</span><span class="per">pago único</span></div>
+            <a class="btn btn--primary btn--lg btn--block magnetic js-kitpro-link" href="#" data-gumroad-overlay-checkout="true">Comprar Kit Pro · USD 12</a>
+            <p class="kitpro__fine">PDF de 32 páginas, descarga inmediata. Pago seguro con Gumroad (tarjeta o PayPal). Se cobra en dólares y tu banco lo convierte a pesos.</p>
+            <p class="kitpro__guarantee">🛡️ <b>Garantía de 14 días:</b> si no te sirve, te devolvemos el dinero. <a href="reembolsos.html" target="_blank" rel="noopener">Ver política</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -577,13 +623,13 @@
             <div class="offer__phases">
               <div class="phase phase--now">
                 <span class="phase__label">Primera versión</span>
-                <div class="plan__price"><span class="cur">$</span><span class="amt">0</span></div>
+                <div class="plan__price"><span class="amt">Gratis</span></div>
                 <span class="phase__note">Gratis para la lista de espera</span>
               </div>
               <div class="phase__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
               <div class="phase">
                 <span class="phase__label">Para seguir usándolo</span>
-                <div class="plan__price"><span class="cur">$</span><span class="amt">29</span><span class="per">/mes</span></div>
+                <div class="plan__price"><span class="cur">USD</span><span class="amt">29</span><span class="per">/mes</span></div>
                 <span class="phase__note">Precio fundador bloqueado para siempre</span>
               </div>
             </div>
@@ -600,7 +646,7 @@
             <li>Soporte por chat y email</li>
           </ul>
         </div>
-        <p class="footnote reveal">Precio previsto para el lanzamiento, en USD. Sin permanencia: si no te sirve, lo dejas cuando quieras.</p>
+        <p class="footnote reveal">Precio previsto para el lanzamiento: USD 29 al mes. Se cobra en dólares y tu banco lo convierte a pesos. Sin permanencia: si no te sirve, lo dejas cuando quieras.</p>
       </div>
     </section>
 
@@ -691,13 +737,13 @@
             </div>
             <label class="consent">
               <input type="checkbox" id="fConsent" required>
-              <span>Acepto recibir información sobre Mindflow. Nada de spam, prometido.</span>
+              <span>Acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a> y recibir información sobre Mindflow. Nada de spam, prometido.</span>
             </label>
             <button type="submit" class="btn btn--primary btn--block btn--lg magnetic">
               <span class="btn__label">Quiero mi acceso anticipado</span>
               <span class="btn__spinner" aria-hidden="true"></span>
             </button>
-            <p class="signup__micro">🔒 Tus datos están seguros. Respondemos en menos de 24 h.</p>
+            <p class="signup__micro">🔒 Tus datos están seguros. Te escribiremos en cuanto tu acceso esté listo.</p>
           </div>
 
           <div class="signup__state signup__success" data-state="success" hidden>
@@ -710,12 +756,33 @@
               <span>Tu código fundador</span>
               <b id="successCode">MF-0000</b>
             </div>
+<div class="share " data-share>
+              <p class="share__title">¿Conoces a otro psicólogo al que le pueda servir? Compártele Mindflow 🤍</p>
+              <div class="share__btns">
+                <a class="share__btn share__btn--wa" data-share-wa href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+                <a class="share__btn" data-share-in href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+                <button type="button" class="share__btn" data-share-copy>🔗 Copiar enlace</button>
+              </div>
+            </div>
             <a href="#prototipo" class="btn btn--ghost btn--block">Mientras tanto, prueba la demo</a>
           </div>
         </form>
       </div>
     </section>
   </main>
+
+  <section class="share-band" aria-label="Compartir Mindflow">
+    <div class="container share-band__inner">
+      <div class="share share--band" data-share>
+              <p class="share__title">¿Conoces a un psicólogo que pierde tiempo agendando y respondiendo mensajes? Compártele Mindflow.</p>
+              <div class="share__btns">
+                <a class="share__btn share__btn--wa" data-share-wa href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+                <a class="share__btn" data-share-in href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+                <button type="button" class="share__btn" data-share-copy>🔗 Copiar enlace</button>
+              </div>
+            </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container footer__inner">
@@ -732,6 +799,8 @@
         <a href="#precios">Precios</a>
         <a href="#faq">FAQ</a>
         <a href="#acceso">Acceso anticipado</a>
+        <a href="privacidad.html">Política de datos</a>
+        <a href="reembolsos.html">Reembolsos</a>
       </nav>
     </div>
     <div class="container footer__bottom">
