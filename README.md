@@ -15,7 +15,7 @@ Sitio estático (HTML + CSS + JavaScript, sin dependencias ni proceso de compila
 | Vídeo | Vídeo promocional de 40 s en 1080p (`assets/video/mindflow-demo.mp4`) |
 | **Prototipo interactivo** | Vista paciente (chat que responde preguntas y agenda cita real: día → hora → modalidad → nombre → confirmación → recordatorio) y vista psicólogo (panel con agenda, KPIs y recordatorios que se actualizan en tiempo real) |
 | Calculadora ROI | Controles deslizantes que estiman ingresos recuperados y horas ahorradas |
-| Casos de uso, ética y privacidad, precios (mensual/anual), FAQ | — |
+| Kit gratis, casos de uso, ética y privacidad, precio (un solo plan, con equivalente en pesos), FAQ | — |
 | Acceso anticipado | Formulario con validación, estado de éxito, código fundador y confeti |
 
 Además: barra de progreso de lectura, menú móvil animado, botón fijo de CTA en móvil, botones magnéticos, efecto 3D *tilt*, y soporte de `prefers-reduced-motion`.
@@ -31,7 +31,7 @@ python3 -m http.server 8080
 
 ## Publicar
 
-**Web en producción:** https://mindflowbot.netlify.app (Netlify, subida manual del ZIP). Copia en GitHub Pages: https://samutogo34-ops.github.io/Mi-web-asistente/ (se actualiza sola con cada push).
+**Web en producción:** https://mindflowbot.netlify.app. Netlify publica sola la rama `claude/mindflow-professional-website-bn1ady` en 1-2 minutos tras cada push. Copia en GitHub Pages: https://samutogo34-ops.github.io/Mi-web-asistente/.
 
 ## Configuración importante
 
@@ -67,7 +67,7 @@ Se envía un `POST` JSON con: `nombre`, `email`, `whatsapp`, `tipo`, `codigo`, `
 Mientras `formEndpoint` esté vacío, los registros se guardan solo en el navegador (`localStorage`, clave `mindflow_waitlist`) para pruebas.
 
 ### 3. Precio
-Un solo plan, todo incluido: **gratis en la primera versión** y después **USD 29/mes** (precio fundador bloqueado). Para cambiarlo, edita el `29` de la sección `#precios` en `index.html` y el `29` de la función `calc()` en `main.js` (calculadora ROI).
+Un solo plan, todo incluido: **gratis en la primera versión** y después **USD 29/mes** (precio fundador bloqueado). Para cambiarlo, edita el `29` de la sección `#precios` en `index.html` (y su equivalente en pesos, `$116.000 COP`, calculado a 1 USD ≈ 4.000 COP) y el `29` de la función `calc()` en `main.js` (calculadora ROI).
 
 ### 4. Datos del prototipo
 Las respuestas del chat de demo (precios, horarios, enfoques de la "Psic. Laura Méndez", ficticia) están en el objeto `ANSWERS` de `main.js`.

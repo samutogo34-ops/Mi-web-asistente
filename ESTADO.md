@@ -29,6 +29,7 @@ Netlify publica **solo** la rama `claude/mindflow-professional-website-bn1ady`. 
 - **Kit gratis** "20 plantillas de mensajes para psicólogos" (13 páginas): tono cálido, máx. 3 emojis, 18 versiones para padres o acudientes y avance del Kit Pro. Textos en `kit-src/data_free.py`; se regenera con `python3 kit-src/build_free.py && node kit-src/render-kit.mjs`.
 - **Botones para compartir** Mindflow (WhatsApp, LinkedIn, copiar enlace; menú nativo en celular).
 - **Páginas legales**: `privacidad.html` (Ley 1581 de 2012) y `reembolsos.html` (garantía de 14 días).
+- **Revisión de la web (nov. 2026)**: correo de contacto visible (pie y FAQ), promesas del producto en futuro (todavía no existe), precio con equivalente en pesos (≈ $116.000 COP), enlace al kit gratis en la portada y el pie, campo "Tu email" en lugar de "Email profesional", y cinta de especialidades solo con psicología.
 - **Logo** en `assets/img/brand/`.
 - **Instagram de Mindflow** creado. Material en `marketing/instagram/`: 4 publicaciones (1080×1350), un Reel de 14 s sin audio (música y "texto a voz" se añaden en Instagram) y `textos.md` con los textos, hashtags y biografía.
   - Calendario: día 1 presentación ✅ · día 2 el problema ✅ · día 3 "3 mensajes que reducen las ausencias" · día 4 kit gratis + Reel.
