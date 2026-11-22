@@ -67,6 +67,28 @@ Copias, pegas y listo. Descárgalo gratis en el enlace de la bio 👆
 
 ---
 
+## 5 · Fuera de horario — `post-5-fuera-de-horario.png`
+
+Publícala **después** de la 4. Luego, en tu perfil, abre la publicación del kit (la 4) → los **3 puntos** → **Fijar en tu perfil**. Así el kit gratis sigue siendo lo primero que se ve.
+
+```
+Son las 10 p. m. Tu consulta está cerrada… pero tus pacientes siguen escribiendo 🌙
+
+Un mensaje que espera hasta el día siguiente puede ser un paciente que agenda con otra persona. Estas 3 herramientas gratis te ayudan desde hoy:
+
+1️⃣ Mensaje de ausencia en WhatsApp Business: responde solo cuando cierras (y, si es una urgencia, orienta a la Línea 123).
+2️⃣ Respuestas rápidas: tus tarifas, modalidad y dirección listas para enviar en 2 segundos.
+3️⃣ Agenda de citas de Google Calendar: un enlace para que el paciente elija su hora sin esperarte.
+
+Guárdalo 💾 y compártelo con un colega que responde mensajes de noche.
+
+Estamos creando Mindflow para que estas tres cosas pasen solas, 24/7. Kit gratis y lista de espera en la bio 🤍
+
+#psicologia #psicologos #psicologiacolombia #consultapsicologica #whatsappbusiness #tipsparapsicologos #saludmental
+```
+
+---
+
 ## Reel — `reel-mindflow.mp4` (14 segundos, sin audio)
 
 Muestra las 4 publicaciones en movimiento. Al subirlo como Reel:

@@ -65,6 +65,21 @@
   .cta { align-self:flex-start; padding:26px 44px; border-radius:999px; background:var(--grad-btn); font-weight:800; font-size:36px; box-shadow:0 24px 60px -16px rgba(139,92,246,.8); }
   .p4 .book { position:absolute; right:-150px; top:52%; width:520px; transform:translateY(-50%) rotate(6deg); border-radius:14px; box-shadow:0 60px 120px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.15); }
   .p4 .free { position:absolute; right:150px; top:200px; z-index:3; padding:18px 30px; border-radius:999px; background:#2dd4bf; color:#05291f; font-weight:800; font-size:34px; transform:rotate(-8deg); box-shadow:0 20px 40px -10px rgba(0,0,0,.6); }
+
+  /* 5 · fuera de horario */
+  .p5 { padding-top:84px; padding-bottom:80px; }
+  .p5 .night { margin-top:40px; display:flex; align-items:center; gap:26px; padding:22px 30px; border-radius:28px; background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.12); }
+  .p5 .clock { font-size:76px; font-weight:300; letter-spacing:-0.04em; line-height:1; }
+  .p5 .night div { font-size:27px; color:var(--muted); line-height:1.35; }
+  .p5 .night b { color:var(--text); }
+  .p5 .badge { margin-left:auto; flex:none; min-width:64px; height:64px; border-radius:50%; background:#25d366; color:#04260f; display:grid; place-items:center; font-weight:800; font-size:32px; }
+  .p5 h2 { margin-top:44px; font-size:64px; }
+  .p5 .tips { margin-top:44px; gap:22px; margin-bottom:28px; }
+  .p5 .tip { padding:24px 30px; gap:24px; }
+  .p5 .tip .n { width:62px; height:62px; font-size:31px; border-radius:20px; }
+  .p5 .tip strong { font-size:32px; margin-bottom:6px; }
+  .p5 .tip span { font-size:25px; }
+  .p5 .tip q { font-size:24px; margin-top:10px; }
 </style>
 </head>
 <body>
@@ -122,6 +137,23 @@
   </div>
   <img class="book" src="kit-cover-01.png" alt="">
   <span class="free">GRATIS</span>
+</section>
+
+<!-- 5 · Fuera de horario -->
+<section class="post p5">
+  <div class="brand"><img src="mindflow-icono.png" alt="">Mindflow</div>
+  <div class="night">
+    <span class="clock">22:00</span>
+    <div><b>Consulta cerrada 🌙</b><br>“¿Tiene cupo esta semana?”</div>
+    <span class="badge">3</span>
+  </div>
+  <h2>Tus pacientes siguen escribiendo. <span class="serif grad">¿Quién les responde?</span></h2>
+  <div class="tips">
+    <div class="tip"><span class="n">1</span><div><strong>Mensaje de ausencia</strong><span>WhatsApp Business → Herramientas → Mensaje de ausencia → “Fuera del horario comercial”.</span><q>Ya cerramos por hoy 🌙 Mañana desde las 8:00 a. m. le respondo. Si es una urgencia, llame a la Línea 123.</q></div></div>
+    <div class="tip"><span class="n">2</span><div><strong>Respuestas rápidas</strong><span>Guarda tus tarifas, modalidad y dirección. Por la mañana las envías escribiendo “/” en 2 segundos.</span></div></div>
+    <div class="tip"><span class="n">3</span><div><strong>Un enlace para agendar solos</strong><span>Con “Agenda de citas” de Google Calendar, el paciente elige su hora sin esperarte.</span></div></div>
+  </div>
+  <div class="foot"><span>🤍 Pronto, Mindflow hará las tres por ti</span><b>Guárdalo 💾</b></div>
 </section>
 
 </body>

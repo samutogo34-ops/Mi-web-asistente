@@ -10,7 +10,7 @@ const { chromium } = require("playwright");
 const here = path.dirname(fileURLToPath(import.meta.url));
 const out = path.resolve(here, "..");
 
-const names = ["1-presentacion", "2-el-problema", "3-reduce-ausencias", "4-kit-gratis"];
+const names = ["1-presentacion", "2-el-problema", "3-reduce-ausencias", "4-kit-gratis", "5-fuera-de-horario"];
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1200, height: 1400 }, deviceScaleFactor: 1 });
 await page.goto("file://" + path.join(here, "posts.html"));
@@ -29,6 +29,8 @@ if (process.env.SKIP_REEL) { console.log("OK (solo imágenes) ->", out); process
 // Reel: cada publicación 3,5 s con zoom suave, sobre fondo desenfocado, 1080×1920 a 30 fps
 const D = 3.5, FPS = 30, frames = Math.round(D * FPS);
 // una sola imagen por entrada: zoompan genera los fotogramas (sin -loop, que multiplicaría la duración)
+// el Reel usa solo las 4 primeras publicaciones
+files.splice(4);
 const inputs = files.flatMap((f) => ["-i", f]);
 const chains = files.map((_, i) =>
   `[${i}:v]split[a${i}][b${i}];` +
