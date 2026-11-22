@@ -175,6 +175,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .hero__trust { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; padding: 0; margin: 28px 0 0; color: var(--muted); font-size: 14px; }
 .hero__trust li { display: inline-flex; align-items: center; gap: 8px; }
 .hero__trust svg { width: 16px; height: 16px; color: var(--teal); stroke-width: 3; }
+.hero__kit { display: inline-block; margin-top: 18px; font-size: 14px; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+.hero__kit:hover { color: var(--text); }
 
 /* phone */
 .hero__visual { position: relative; display: flex; justify-content: center; perspective: 1200px; }
@@ -640,6 +642,9 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .footer nav { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: flex-start; }
 .footer nav a { color: var(--muted); font-size: 14px; transition: color .2s; }
 .footer nav a:hover { color: var(--text); }
+.footer__contact { margin-top: 10px; font-size: 14px; color: var(--muted); }
+.footer__contact a, .faq a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+.phase__cop { color: var(--teal); }
 .footer__bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--dim); }
 
 /* compartir (boca a boca) */
