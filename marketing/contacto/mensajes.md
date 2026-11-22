@@ -31,14 +31,14 @@ Vimos [su trabajo con adolescentes / su enfoque en ansiedad / las reseñas tan b
 
 Sabemos que detrás de cada consulta hay un trabajo que nadie ve: "¿tiene cupo esta semana?", "¿a qué hora era mi cita?", "¿puedo cambiar la sesión?". Mensajes que llegan entre sesiones, de noche o el fin de semana, y que se llevan tiempo y energía.
 
-Por eso preparamos algo para usted: 20 mensajes listos para copiar y pegar en WhatsApp, cálidos y profesionales, para confirmar citas, recordar sesiones, reprogramar y cobrar sin incomodidad. Cada uno trae su versión para padres o acudientes.
+Por eso estamos creando Mindflow, un asistente que responderá esos mensajes por usted. Mientras lo terminamos, preparamos algo que puede usar desde hoy: 20 mensajes listos para copiar y pegar en WhatsApp, cálidos y profesionales, para confirmar citas, recordar sesiones, reprogramar y cobrar sin incomodidad. Cada uno trae su versión para padres o acudientes.
 
 Es un regalo, sin ningún compromiso 🎁
 https://mindflowbot.netlify.app/#kit
 
 Con solo usar el recordatorio de 24 horas, puede empezar a notar menos ausencias desde esta semana.
 
-Y si tiene un minuto, nos encantaría leerle: ¿cuál es la pregunta que más le hacen sus pacientes por WhatsApp? Su respuesta nos ayuda a crear herramientas que de verdad sirvan a los psicólogos en Colombia.
+Y si tiene un minuto, nos encantaría leerle: ¿cuál es la pregunta que más le hacen sus pacientes por WhatsApp? Su respuesta nos ayuda a crear Mindflow pensando en psicólogos como usted.
 
 Con aprecio,
 El equipo de Mindflow 🤍
@@ -56,12 +56,12 @@ Vimos su trabajo con [niños, parejas y familias] y las reseñas de sus paciente
 
 Sabemos que en un centro con varios terapeutas la agenda nunca descansa: confirmar, reprogramar, recordar, responder las mismas preguntas una y otra vez.
 
-Por eso preparamos un kit con 20 mensajes listos para WhatsApp, cálidos y profesionales: confirmaciones, recordatorios, cancelaciones y pagos, cada uno con su versión para padres o acudientes. Puede servirle a todo el equipo y a quien lleva la agenda.
+Por eso estamos creando Mindflow, un asistente que se encargará de esos mensajes por ustedes. Mientras lo terminamos, preparamos algo que pueden usar desde hoy: 20 mensajes listos para WhatsApp, cálidos y profesionales: confirmaciones, recordatorios, cancelaciones y pagos, cada uno con su versión para padres o acudientes. Puede servirle a todo el equipo y a quien lleva la agenda.
 
 Es un regalo, sin ningún compromiso 🎁
 https://mindflowbot.netlify.app/#kit
 
-Y si tienen un minuto, nos encantaría saber: ¿qué es lo que más tiempo les quita de la agenda? Su respuesta nos ayuda a crear herramientas que de verdad sirvan a los centros de psicología en Colombia.
+Y si tienen un minuto, nos encantaría saber: ¿qué es lo que más tiempo les quita de la agenda? Su respuesta nos ayuda a crear Mindflow pensando en centros como el suyo.
 
 Con aprecio,
 El equipo de Mindflow 🤍
@@ -78,7 +78,7 @@ En Instagram, un primer mensaje **con enlace** desde una cuenta nueva suele caer
 ```
 Hola, [Nombre]. Vimos su perfil y nos encantó [su contenido sobre crianza / su enfoque en parejas].
 
-Somos Mindflow. Preparamos un kit con 20 mensajes listos para WhatsApp, para que confirmar citas, recordar sesiones y cobrar le tome segundos (con versión para padres o acudientes).
+Estamos creando Mindflow, un asistente para consultas de psicología, y mientras tanto preparamos un kit con 20 mensajes listos para WhatsApp, para que confirmar citas, recordar sesiones y cobrar le tome segundos (con versión para padres o acudientes).
 
 Nos gustaría regalárselo. ¿Se lo enviamos? 🎁
 ```
