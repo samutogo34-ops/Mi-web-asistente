@@ -27,23 +27,27 @@ Lo que va entre [corchetes] lo cambias por los datos de cada psicólogo.
 ```
 Hola, [Nombre]:
 
-Vimos [su trabajo con adolescentes / su enfoque en ansiedad / las reseñas tan bonitas de sus pacientes] y quisimos escribirle.
+Sabemos que su tiempo es valioso, así que seremos breves: leer esto le tomará menos de un minuto.
 
-Sabemos que detrás de cada consulta hay un trabajo que nadie ve: "¿tiene cupo esta semana?", "¿a qué hora era mi cita?", "¿puedo cambiar la sesión?". Mensajes que llegan entre sesiones, de noche o el fin de semana, y que se llevan tiempo y energía.
+Este correo lo escribimos personalmente después de visitar su [web / perfil]. [Línea personalizada: algo real de su trabajo, su lema o sus reseñas.]
 
-Por eso estamos creando Mindflow, un asistente que responderá esos mensajes por usted. Mientras lo terminamos, preparamos algo que puede usar desde hoy: 20 mensajes listos para copiar y pegar en WhatsApp, cálidos y profesionales, para confirmar citas, recordar sesiones, reprogramar y cobrar sin incomodidad. Cada uno trae su versión para padres o acudientes.
+Imaginamos que, entre sesiones o de noche, le llegan mensajes como "¿tiene cupo esta semana?" o "¿puedo cambiar mi cita?". Responderlos con calidez lleva tiempo y energía.
 
-Es un regalo, sin ningún compromiso 🎁
+Por eso estamos creando Mindflow, un asistente que responderá esos mensajes por usted. Y mientras lo terminamos, preparamos algo útil desde hoy: 20 mensajes listos para copiar y pegar en WhatsApp, para confirmar citas, recordar sesiones, reprogramar y cobrar sin incomodidad, con versión para padres o acudientes.
+
+Es un regalo: no le pediremos pagos ni datos de tarjeta 🎁
 https://mindflowbot.netlify.app/#kit
 
-Con solo usar el recordatorio de 24 horas, puede empezar a notar menos ausencias desde esta semana.
+Si no es para usted, no se preocupe: basta con responder "no, gracias" y no volveremos a escribirle.
 
-Y si tiene un minuto, nos encantaría leerle: ¿cuál es la pregunta que más le hacen sus pacientes por WhatsApp? Su respuesta nos ayuda a crear Mindflow pensando en psicólogos como usted.
+Y si tiene un minuto, nos encantaría leerle: ¿cuál es la pregunta que más le hacen sus pacientes por WhatsApp?
 
 Con aprecio,
 El equipo de Mindflow 🤍
-mindflowbot.netlify.app · Instagram: @[usuario de Mindflow]
+mindflowbot.netlify.app
 ```
+
+> No escribas "esto no es spam": esa frase hace que parezca spam y los filtros de correo la detectan. Lo que demuestra que no lo es: la línea personalizada, la brevedad, que no pedimos dinero y la salida fácil ("no, gracias").
 
 ## 2 · Correo para centro de psicología (varios terapeutas)
 
