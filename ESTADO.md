@@ -32,12 +32,12 @@ Netlify publica **solo** la rama `claude/mindflow-professional-website-bn1ady`. 
 - **Revisión de la web (nov. 2026)**: correo de contacto visible (pie y FAQ), promesas del producto en futuro (todavía no existe), precio con equivalente en pesos (≈ $116.000 COP), enlace al kit gratis en la portada y el pie, campo "Tu email" en lugar de "Email profesional", y cinta de especialidades solo con psicología.
 - **Logo** en `assets/img/brand/`.
 - **Instagram de Mindflow** creado. Material en `marketing/instagram/`: 4 publicaciones (1080×1350), un Reel de 14 s sin audio (música y "texto a voz" se añaden en Instagram) y `textos.md` con los textos, hashtags y biografía.
-  - Calendario: día 1 presentación ✅ · día 2 el problema ✅ · día 3 "3 mensajes que reducen las ausencias" · día 4 kit gratis + Reel.
+  - Calendario: día 1 presentación ✅ · día 2 el problema ✅ (22 nov.) · día 3 "3 mensajes que reducen las ausencias" · día 4 kit gratis + Reel.
 - **Hoja de seguimiento** de contactos (Excel, 50 filas, estados y recordatorio a +5 días). La guarda el fundador en su computador o Drive privado, **nunca en GitHub**.
 
 ## Pendiente (en orden)
 1. **Instagram**: publicar la 3 y la 4 (+ Reel), una por día. Responder comentarios el mismo día.
-2. **Contactar psicólogos** (meta: 10 esta semana, 50 en total → si ≥5 se apuntan, hay interés real).
+2. **Contactar psicólogos** — mensajes listos en `marketing/contacto/mensajes.md` (correo, Instagram en 2 pasos, recordatorio y respuestas) (meta: 10 esta semana, 50 en total → si ≥5 se apuntan, hay interés real).
    - Canales: correo desde hola.mindflow.bot (correo publicado en su web o Google Maps) o mensaje directo desde el Instagram de Mindflow. Si un formulario exige celular, **no** usar el número personal: buscar el correo o escribir por Instagram.
    - Enfoque "regalo primero": ofrecer el kit gratis (https://mindflowbot.netlify.app/#kit) y mencionar Mindflow después. Tratar de usted, máx. 10 correos/día, un mensaje + un recordatorio a los 5 días, y respetar si dicen que no.
    - Contacto nº 1: un centro de psicología en Bogotá (niños, parejas y familias; 4,9 ★ con 145 reseñas). Su formulario exige celular → escribirle por Instagram cuando el perfil tenga las 4 publicaciones.
